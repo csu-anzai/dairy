@@ -1,0 +1,10 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: dairy_dev
+  username: root
+  password: Welcome@123
