@@ -17,3 +17,8 @@ i = i_c.items.create(name: 'Milk')
 i_v = i.item_variants.create(price: 100)
 i_v.attribute_choices << a_c11
 i_v.attribute_choices << a_c21
+
+# ========================================= #
+Unit.create(name: 'Kilo Grams', code: 'KGS')
+Unit.create(name: 'Litre', code: 'LTR')
+# ========================================= #

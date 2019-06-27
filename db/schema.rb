@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_033508) do
+ActiveRecord::Schema.define(version: 2019_06_27_042708) do
 
   create_table "attribute_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_06_27_033508) do
 
   create_table "item_variants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
+    t.decimal "price", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_variants_on_item_id"
@@ -66,9 +67,26 @@ ActiveRecord::Schema.define(version: 2019_06_27_033508) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "item_category_id"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
+  end
+
+  create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
