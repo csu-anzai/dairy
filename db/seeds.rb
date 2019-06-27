@@ -14,6 +14,6 @@ i_c.item_attributes << i_a1
 i_c.item_attributes << i_a2
 
 i = i_c.items.create(name: 'Milk')
-i_v = i.item_variants.create
+i_v = i.item_variants.create(price: 100)
 i_v.attribute_choices << a_c11
 i_v.attribute_choices << a_c21
