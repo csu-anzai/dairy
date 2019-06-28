@@ -5,4 +5,5 @@ class Item < ApplicationRecord
 
   has_many :vendor_items, inverse_of: :item, dependent: :destroy
   has_many :vendors, through: :vendor_items
+
 end

@@ -19,6 +19,17 @@ i_v.attribute_choices << a_c11
 i_v.attribute_choices << a_c21
 
 # ========================================= #
-Unit.create(name: 'Kilo Grams', code: 'KGS')
-Unit.create(name: 'Litre', code: 'LTR')
+u1 = Unit.create(name: 'Kilo Grams', code: 'KGS')
+u2 = Unit.create(name: 'Litre', code: 'LTR')
 # ========================================= #
+
+v1 = Vendor.create(name: 'Vendor1')
+c1 = Customer.create(name: 'Customer1')
+
+a1 = Address.create(address1: 'address1', address2: 'address2', addressable: v1)
+a2 = Address.create(address1: 'address11', address2: 'address12', addressable: c1)
+
+s1 = a2.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
+add1 = s1.create_addon(start_date: Date.today, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
+
+Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }

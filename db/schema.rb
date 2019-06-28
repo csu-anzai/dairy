@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_042708) do
+ActiveRecord::Schema.define(version: 2019_06_28_034315) do
+
+  create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "subscription_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal "quantity", precision: 10
+    t.bigint "unit_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_addons_on_subscription_id"
+    t.index ["unit_id"], name: "index_addons_on_unit_id"
+  end
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "address1"
+    t.string "address2"
+    t.bigint "user_id"
+    t.string "addressable_type"
+    t.integer "addressable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
 
   create_table "attribute_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -26,6 +50,17 @@ ActiveRecord::Schema.define(version: 2019_06_27_042708) do
     t.bigint "item_variant_id"
     t.index ["attribute_choice_id"], name: "index_attribute_choices_item_variants_on_attribute_choice_id"
     t.index ["item_variant_id"], name: "index_attribute_choices_item_variants_on_item_variant_id"
+  end
+
+  create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "address_id"
+    t.bigint "subscription_id"
+    t.string "status"
+    t.text "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_deliveries_on_address_id"
+    t.index ["subscription_id"], name: "index_deliveries_on_subscription_id"
   end
 
   create_table "item_attributes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,6 +108,35 @@ ActiveRecord::Schema.define(version: 2019_06_27_042708) do
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
   end
 
+  create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "user_id"
+    t.decimal "quantity", precision: 10
+    t.bigint "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_stocks_on_item_id"
+    t.index ["unit_id"], name: "index_stocks_on_unit_id"
+    t.index ["user_id"], name: "index_stocks_on_user_id"
+  end
+
+  create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "address_id"
+    t.bigint "item_variant_id"
+    t.decimal "quantity", precision: 10
+    t.bigint "unit_id"
+    t.integer "frequency"
+    t.string "status"
+    t.boolean "call_verified"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_subscriptions_on_address_id"
+    t.index ["item_variant_id"], name: "index_subscriptions_on_item_variant_id"
+    t.index ["unit_id"], name: "index_subscriptions_on_unit_id"
+  end
+
   create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "code"
@@ -89,4 +153,16 @@ ActiveRecord::Schema.define(version: 2019_06_27_042708) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vendor_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.decimal "price", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_vendor_items_on_item_id"
+    t.index ["user_id"], name: "index_vendor_items_on_user_id"
+  end
+
+  add_foreign_key "deliveries", "addresses"
+  add_foreign_key "deliveries", "subscriptions"
 end
