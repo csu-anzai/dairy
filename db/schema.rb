@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.decimal "quantity", precision: 10
     t.bigint "unit_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "remarks"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,9 +29,16 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address1"
     t.string "address2"
-    t.bigint "user_id"
-    t.string "addressable_type"
     t.integer "addressable_id"
+    t.string "addressable_type"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "receiver_name"
+    t.string "receiver_mobile"
+    t.string "land_mark"
+    t.bigint "user_id"
+    t.string "zip"
+    t.string "status", default: "inactive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -55,9 +63,10 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "batches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "item_variant_id"
+    t.string "code"
     t.datetime "manufacturing_date"
     t.datetime "expiry_date"
-    t.string "code"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_variant_id"], name: "index_batches_on_item_variant_id"
@@ -67,8 +76,8 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "subscription_id"
-    t.string "status"
     t.text "remarks"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
@@ -105,7 +114,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "item_variants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
-    t.decimal "price", precision: 10
+    t.decimal "price", precision: 7, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_variants_on_item_id"
@@ -122,7 +131,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "batch_id"
-    t.decimal "quantity", precision: 10
+    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -131,15 +140,16 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   end
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.bigint "address_id"
     t.bigint "item_variant_id"
     t.decimal "quantity", precision: 10
     t.bigint "unit_id"
     t.integer "frequency"
-    t.string "status"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "remarks"
     t.boolean "call_verified"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_subscriptions_on_address_id"
@@ -155,18 +165,24 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "salutation"
     t.string "name"
+    t.string "gender"
     t.string "username"
     t.string "email"
+    t.string "mobile"
     t.string "type"
+    t.boolean "premium"
+    t.boolean "call_verified"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "vendor_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "item_id"
-    t.decimal "price", precision: 10
+    t.bigint "user_id"
+    t.decimal "price", precision: 7, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_vendor_items_on_item_id"
