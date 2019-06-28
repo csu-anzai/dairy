@@ -3,4 +3,7 @@ class Batch < ApplicationRecord
   belongs_to :item_variant, inverse_of: :batches
   has_one :item, through: :item_variant
   has_one :stock, inverse_of: :batch, dependent: :destroy
+  # has_one :item_category, through: :item_variant
+  # has_many :item_attributes, through: :item_category
+  # has_many :attribute_choices, through: :item_attributes
 end
