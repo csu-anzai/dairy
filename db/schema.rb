@@ -54,9 +54,13 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "batches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "item_variant_id"
+    t.datetime "manufacturing_date"
+    t.datetime "expiry_date"
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_variant_id"], name: "index_batches_on_item_variant_id"
     t.index ["user_id"], name: "index_batches_on_user_id"
   end
 
@@ -117,14 +121,12 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
     t.bigint "batch_id"
     t.decimal "quantity", precision: 10
     t.bigint "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["batch_id"], name: "index_stocks_on_batch_id"
-    t.index ["item_id"], name: "index_stocks_on_item_id"
     t.index ["unit_id"], name: "index_stocks_on_unit_id"
   end
 

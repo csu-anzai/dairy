@@ -32,4 +32,11 @@ a2 = Address.create(address1: 'address11', address2: 'address12', addressable: c
 s1 = a2.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add1 = s1.create_active_addon(start_date: Date.today, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
 
-Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
+bt = i_v.batches.create(vendor: v1, manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
+
+bt.create_stock(quantity: 100, unit: u1)
+
+
+
+# Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
+

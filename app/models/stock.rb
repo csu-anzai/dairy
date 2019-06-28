@@ -1,5 +1,4 @@
 class Stock < ApplicationRecord
-  belongs_to :item
-  belongs_to :batch
-  belongs_to :unit
+  belongs_to :batch, inverse_of: :stock
+  belongs_to :unit, inverse_of: :stocks
 end
