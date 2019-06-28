@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_034315) do
+ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 2019_06_28_034315) do
     t.bigint "item_variant_id"
     t.index ["attribute_choice_id"], name: "index_attribute_choices_item_variants_on_attribute_choice_id"
     t.index ["item_variant_id"], name: "index_attribute_choices_item_variants_on_item_variant_id"
+  end
+
+  create_table "batches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_batches_on_user_id"
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,14 +118,14 @@ ActiveRecord::Schema.define(version: 2019_06_28_034315) do
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
-    t.bigint "user_id"
+    t.bigint "batch_id"
     t.decimal "quantity", precision: 10
     t.bigint "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["batch_id"], name: "index_stocks_on_batch_id"
     t.index ["item_id"], name: "index_stocks_on_item_id"
     t.index ["unit_id"], name: "index_stocks_on_unit_id"
-    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
