@@ -11,6 +11,6 @@ class Batch < ApplicationRecord
 
   # Validations
   validates :code, presence: true, length: { minimum: 4, maximum: 25}
-  # validates :manufacturing_date, presence: true, date: { after_or_equal_to: Proc.new { Date.today }, message: "Must be at least #{(Date.today).to_s}" }
-  # validates :expiry_date, presence: true, date: { after_or_equal_to:  :manufacturing_date, message: "Must be after the manufacturing date!" }
+  validates :manufacturing_date, presence: true, date: { after_or_equal_to: Proc.new { Date.today - 1.day }, message: "must be at least #{(Date.today).to_s}!" }
+  validates :expiry_date, presence: true, date: { after_or_equal_to:  :manufacturing_date, message: "must be after the manufacturing date!" }
 end
