@@ -23,20 +23,17 @@ u1 = Unit.create(name: 'Kilo Grams', code: 'KGS')
 u2 = Unit.create(name: 'Litre', code: 'LTR')
 # ========================================= #
 
-v1 = Vendor.create(name: 'Vendor1')
-c1 = Customer.create(name: 'Customer1')
+v1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", username: 'ven_user', email: 'vandor@admin.com', mobile: '9874562125')
+c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", username: 'cstm_user', email: 'customer@admin.com', mobile: '8547125481')
 
-a1 = Address.create(address1: 'address1', address2: 'address2', addressable: v1)
-a2 = Address.create(address1: 'address11', address2: 'address12', addressable: c1)
+a1 = Address.create(address1: 'H.No- 119, Block- A, Near- Govt. hospital', address2: 'address2', addressable: v1, receiver_name: 'My mother', receiver_mobile: '9854215784', zip: '521456')
+a2 = Address.create(address1: 'H.No- 387, Block- C, Near- Essar Petrol Pump', address2: 'address12', addressable: c1, receiver_name: 'My brther', receiver_mobile: '7845215487', zip: '65845')
 
 s1 = a2.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add1 = s1.create_active_addon(start_date: Date.today, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
 
-bt = i_v.batches.create(vendor: v1, manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
+bt = i_v.batches.create(vendor: v1, code: 'VN103', manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
 
 bt.create_stock(quantity: 100, unit: u1)
 
-
-
 # Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
-

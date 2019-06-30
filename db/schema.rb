@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
-    t.decimal "quantity", precision: 10
+    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "item_variant_id"
-    t.decimal "quantity", precision: 10
+    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
     t.integer "frequency"
     t.datetime "start_date"

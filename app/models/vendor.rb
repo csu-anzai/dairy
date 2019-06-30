@@ -1,4 +1,5 @@
 class Vendor < User
+  # Associations
   has_many :vendor_items, inverse_of: :vendor, dependent: :destroy
   has_many :items, through: :vendor_items
   has_many :stocks, through: :batches

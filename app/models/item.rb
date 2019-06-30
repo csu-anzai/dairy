@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  # Associations
   belongs_to :item_category, inverse_of: :items
 
   has_many :item_variants, inverse_of: :item, dependent: :destroy
@@ -10,4 +11,7 @@ class Item < ApplicationRecord
   has_many :subscriptions, through: :item_variants
   has_many :active_subscriptions, -> { where('subscriptions.status = (?)', 'active') }, through: :item_variants, source: :subscriptions
   has_many :vendors, through: :vendor_items
+
+  # Validations
+  validates :name, uniqueness:  true, presence: true, length: { minimum: 4, maximum: 70}
 end

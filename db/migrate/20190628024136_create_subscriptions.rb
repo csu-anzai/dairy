@@ -3,7 +3,7 @@ class CreateSubscriptions < ActiveRecord::Migration[5.2]
     create_table :subscriptions do |t|
       t.references :address#, foreign_key: true
       t.references :item_variant
-      t.decimal :quantity
+      t.decimal :quantity, :precision => 9, :scale => 3
       t.references :unit
       t.integer :frequency
       t.datetime :start_date

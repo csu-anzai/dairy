@@ -1,4 +1,5 @@
 class Customer < User
+  # Associations
   has_many :subscriptions, through: :addresses
   has_many :addons, through: :subscriptions
   has_many :active_addons, through: :subscriptions
