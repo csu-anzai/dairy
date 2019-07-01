@@ -10,7 +10,7 @@ class CreateSubscriptions < ActiveRecord::Migration[5.2]
       t.datetime :end_date
       t.text :remarks
       t.boolean :call_verified
-      t.string :status
+      t.string :status, default: 'inactive'
 
       t.timestamps
     end

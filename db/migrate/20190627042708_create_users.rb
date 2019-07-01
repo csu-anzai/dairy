@@ -7,10 +7,12 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :username
       t.string :email
       t.string :mobile
+      t.date :date_of_birth
       t.string :type
-      t.boolean :premium
-      t.boolean :call_verified
-      t.string :status
+      t.boolean :premium, default: false
+      t.boolean :call_verified, default: false
+      t.boolean :blacklisted, default: false
+      t.boolean :active, default: true
 
       t.timestamps
     end

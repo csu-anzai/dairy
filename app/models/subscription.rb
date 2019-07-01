@@ -1,5 +1,6 @@
 class Subscription < ApplicationRecord
   STATUSES = %w[active inactive].freeze
+  FREQUENCIES = %W[everyday alternative_day weekly].freeze
 
   # Associations
   belongs_to :address, inverse_of: :subscriptions

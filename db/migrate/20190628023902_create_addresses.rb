@@ -1,6 +1,7 @@
 class CreateAddresses < ActiveRecord::Migration[5.2]
   def change
     create_table :addresses do |t|
+      t.references :user#, foreign_key: true
       t.string :address1
       t.string :address2
       t.integer :addressable_id
@@ -10,9 +11,8 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :receiver_name
       t.string :receiver_mobile
       t.string :land_mark
-      t.references :user#, foreign_key: true
       t.string :zip
-      t.string :status, default: 'inactive'
+      t.string :status, default: 'active'
 
       t.timestamps
     end

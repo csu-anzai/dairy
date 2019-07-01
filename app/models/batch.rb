@@ -1,4 +1,5 @@
 class Batch < ApplicationRecord
+  STATUSES = %w[active inactive].freeze
   # Associations
   belongs_to :vendor, class_name: 'User', foreign_key: 'user_id', inverse_of: :batches
   belongs_to :item_variant, inverse_of: :batches

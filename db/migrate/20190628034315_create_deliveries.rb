@@ -4,7 +4,7 @@ class CreateDeliveries < ActiveRecord::Migration[5.2]
       t.references :address, foreign_key: true
       t.references :subscription, foreign_key: true
       t.text :remarks
-      t.string :status
+      t.string :status, default: 'dending'
 
       t.timestamps
     end

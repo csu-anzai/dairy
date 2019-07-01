@@ -6,7 +6,7 @@ class CreateBatches < ActiveRecord::Migration[5.2]
       t.string :code
       t.datetime :manufacturing_date
       t.datetime :expiry_date
-      t.string :status
+      t.string :status, default: 'active'
 
       t.timestamps
     end

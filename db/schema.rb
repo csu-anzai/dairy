@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.text "remarks"
-    t.string "status"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subscription_id"], name: "index_addons_on_subscription_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "address1"
     t.string "address2"
     t.integer "addressable_id"
@@ -36,9 +37,8 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.string "receiver_name"
     t.string "receiver_mobile"
     t.string "land_mark"
-    t.bigint "user_id"
     t.string "zip"
-    t.string "status", default: "inactive"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.string "code"
     t.datetime "manufacturing_date"
     t.datetime "expiry_date"
-    t.string "status"
+    t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_variant_id"], name: "index_batches_on_item_variant_id"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.bigint "address_id"
     t.bigint "subscription_id"
     t.text "remarks"
-    t.string "status"
+    t.string "status", default: "dending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.bigint "batch_id"
     t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["batch_id"], name: "index_stocks_on_batch_id"
@@ -149,7 +150,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.datetime "end_date"
     t.text "remarks"
     t.boolean "call_verified"
-    t.string "status"
+    t.string "status", default: "inactive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_subscriptions_on_address_id"
@@ -160,6 +161,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "code"
+    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -171,10 +173,12 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.string "username"
     t.string "email"
     t.string "mobile"
+    t.date "date_of_birth"
     t.string "type"
-    t.boolean "premium"
-    t.boolean "call_verified"
-    t.string "status"
+    t.boolean "premium", default: false
+    t.boolean "call_verified", default: false
+    t.boolean "blacklisted", default: false
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

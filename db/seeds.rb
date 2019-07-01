@@ -23,8 +23,8 @@ u1 = Unit.create(name: 'Kilo Grams', code: 'KGS')
 u2 = Unit.create(name: 'Litre', code: 'LTR')
 # ========================================= #
 
-v1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", username: 'ven_user', email: 'vandor@admin.com', mobile: '9874562125')
-c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", username: 'cstm_user', email: 'customer@admin.com', mobile: '8547125481')
+v1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'ven_user', email: 'vandor@admin.com', mobile: '9874562125')
+c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1990', username: 'cstm_user', email: 'customer@admin.com', mobile: '8547125481')
 
 a1 = Address.create(address1: 'H.No- 119, Block- A, Near- Govt. hospital', address2: 'address2', addressable: v1, receiver_name: 'My mother', receiver_mobile: '9854215784', zip: '521456')
 a2 = Address.create(address1: 'H.No- 387, Block- C, Near- Essar Petrol Pump', address2: 'address12', addressable: c1, receiver_name: 'My brther', receiver_mobile: '7845215487', zip: '65845')

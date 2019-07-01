@@ -4,6 +4,7 @@ class CreateStocks < ActiveRecord::Migration[5.2]
       t.references :batch
       t.decimal :quantity, :precision => 9, :scale => 3
       t.references :unit
+      t.boolean :active, default: true
 
       t.timestamps
     end
