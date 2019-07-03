@@ -10,5 +10,5 @@ class Stock < ApplicationRecord
   has_many :attribute_choices, through: :item_variant
 
   # Validations
-  validates :quantity, numericality: { greater_than_or_equal_to: 1.0 }
+  validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/, message: "must be valid!" }, numericality: { greater_than: 0, less_than: 100000 }
 end
