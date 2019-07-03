@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_041327) do
+ActiveRecord::Schema.define(version: 2019_07_02_035856) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
@@ -129,6 +129,19 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
   end
 
+  create_table "routes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "vendor_id"
+    t.string "name"
+    t.string "start_point"
+    t.string "end_point"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "status", default: "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vendor_id"], name: "index_routes_on_vendor_id"
+  end
+
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "batch_id"
     t.decimal "quantity", precision: 9, scale: 3
@@ -143,8 +156,9 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "item_variant_id"
-    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
+    t.bigint "delivery_executive_id"
+    t.decimal "quantity", precision: 9, scale: 3
     t.integer "frequency"
     t.datetime "start_date"
     t.datetime "end_date"
@@ -154,6 +168,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_041327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_subscriptions_on_address_id"
+    t.index ["delivery_executive_id"], name: "index_subscriptions_on_delivery_executive_id"
     t.index ["item_variant_id"], name: "index_subscriptions_on_item_variant_id"
     t.index ["unit_id"], name: "index_subscriptions_on_unit_id"
   end

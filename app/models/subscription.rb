@@ -5,7 +5,8 @@ class Subscription < ApplicationRecord
   # Associations
   belongs_to :address, inverse_of: :subscriptions
   belongs_to :item_variant, inverse_of: :subscriptions, dependent: :destroy
-  belongs_to :unit, inverse_of: :subscription, dependent: :destroy
+  belongs_to :unit, inverse_of: :subscriptions, dependent: :destroy
+  belongs_to :delivery_executive, inverse_of: :subscription, dependent: :destroy, optional: true
 
   has_one :customer, through: :address, source: :addressable, source_type: 'User'
   has_many :addons, inverse_of: :subscription, dependent: :destroy

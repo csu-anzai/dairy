@@ -23,11 +23,15 @@ u1 = Unit.create(name: 'Kilo Grams', code: 'KGS')
 u2 = Unit.create(name: 'Litre', code: 'LTR')
 # ========================================= #
 
-v1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'ven_user', email: 'vandor@admin.com', mobile: '9874562125')
-c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1990', username: 'cstm_user', email: 'customer@admin.com', mobile: '8547125481')
+v1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'ven_user', email: 'vandor@user.com', mobile: '9874562125')
+c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1990', username: 'cstm_user', email: 'customer@user.com', mobile: '8547125481')
+d_exe1 = DeliveryExecutive.create(name: 'delivery_executive 1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'del_exe_one', email: 'delivery_executive@user.com', mobile: '7687452178')
 
 a1 = Address.create(address1: 'H.No- 119, Block- A, Near- Govt. hospital', address2: 'address2', addressable: v1, receiver_name: 'My mother', receiver_mobile: '9854215784', zip: '521456')
 a2 = Address.create(address1: 'H.No- 387, Block- C, Near- Essar Petrol Pump', address2: 'address12', addressable: c1, receiver_name: 'My brther', receiver_mobile: '7845215487', zip: '65845')
+
+locality1 = Locality.create(name: "Noida sec1", description: "This is a demo locality")
+route1 = locality1.routes.create(name: 'first route', start_point: 'abc first point', end_point: 'xyz last point')
 
 s1 = a2.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add1 = s1.create_active_addon(start_date: Date.today + 1.day, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)

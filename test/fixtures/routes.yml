@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vendor: one
+  title: MyString
+  start_poin: MyString
+  end_point: MyString
+  latitude: MyString
+  longitude: MyString
+
+two:
+  vendor: two
+  title: MyString
+  start_poin: MyString
+  end_point: MyString
+  latitude: MyString
+  longitude: MyString

@@ -6,4 +6,5 @@ class Customer < User
   has_many :item_variants, through: :subscriptions
   has_many :items, through: :item_variants
   has_many :deliveries, through: :subscriptions
+  has_many :images, as: :imageable
 end
