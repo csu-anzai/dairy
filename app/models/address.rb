@@ -2,7 +2,7 @@ class Address < ApplicationRecord
   STATUSES = %w[active inactive].freeze
   # Associations
   belongs_to :addressable, polymorphic: true
-  belongs_to :locality, inverse_of: :addresses
+  belongs_to :locality, inverse_of: :addresses, optional: true
   has_one :vendor, through: :locality
   has_one :delivery_executive, through: :locality
   has_many :subscriptions, inverse_of: :address, dependent: :destroy

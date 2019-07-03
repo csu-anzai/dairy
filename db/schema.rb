@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_035856) do
+ActiveRecord::Schema.define(version: 2019_07_03_043457) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "locality_id"
     t.string "address1"
     t.string "address2"
     t.integer "addressable_id"
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["locality_id"], name: "index_addresses_on_locality_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -82,6 +84,14 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
     t.index ["subscription_id"], name: "index_deliveries_on_subscription_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "imageable_id"
+    t.string "imageable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "item_attributes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,8 +139,18 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
   end
 
+  create_table "localities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "route_id"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_localities_on_route_id"
+  end
+
   create_table "routes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vendor_id"
+    t.bigint "delivery_executive_id"
     t.string "name"
     t.string "start_point"
     t.string "end_point"
@@ -139,6 +159,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["delivery_executive_id"], name: "index_routes_on_delivery_executive_id"
     t.index ["vendor_id"], name: "index_routes_on_vendor_id"
   end
 
@@ -157,7 +178,6 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.bigint "address_id"
     t.bigint "item_variant_id"
     t.bigint "unit_id"
-    t.bigint "delivery_executive_id"
     t.decimal "quantity", precision: 9, scale: 3
     t.integer "frequency"
     t.datetime "start_date"
@@ -168,7 +188,6 @@ ActiveRecord::Schema.define(version: 2019_07_02_035856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_subscriptions_on_address_id"
-    t.index ["delivery_executive_id"], name: "index_subscriptions_on_delivery_executive_id"
     t.index ["item_variant_id"], name: "index_subscriptions_on_item_variant_id"
     t.index ["unit_id"], name: "index_subscriptions_on_unit_id"
   end

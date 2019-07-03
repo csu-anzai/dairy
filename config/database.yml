@@ -7,4 +7,4 @@ development:
   <<: *default
   database: dairy_dev
   username: root
-  password: sqlpassword
+  password: Welcome@123
