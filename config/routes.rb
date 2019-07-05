@@ -8,6 +8,18 @@ Rails.application.routes.draw do
      resources :items, only: [:create, :index, :show, :update, :destroy]
      resources :item_variants, only: [:create, :index, :show, :update, :destroy]
      resources :units, only: [:create, :index, :show, :update, :destroy]
+     resources :users, only: [:create, :index, :show, :update, :destroy]
+     resources :vendors, only: [:create, :index, :show, :update, :destroy]
+     resources :customers, only: [:create, :index, :show, :update, :destroy]
+     resources :delivery_executives, only: [:create, :index, :show, :update, :destroy]
+     resources :addresses, only: [:create, :index, :show, :update, :destroy]
+     resources :routes, only: [:create, :index, :show, :update, :destroy]
+     resources :localities, only: [:create, :index, :show, :update, :destroy]
+     resources :subscriptions, only: [:create, :index, :show, :update, :destroy]
+     resources :addons, only: [:create, :index, :show, :update, :destroy]
+     resources :deliveries, only: [:create, :index, :show, :update, :destroy]
+     resources :batches, only: [:create, :index, :show, :update, :destroy]
+     resources :stocks, only: [:create, :index, :show, :update, :destroy]
     end 
   end 
 end
