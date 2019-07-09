@@ -3,10 +3,12 @@ class User < ApplicationRecord
   # Associations
   has_many :addresses, as: :addressable
   has_many :batches, inverse_of: :vendor, dependent: :destroy
+  has_many :batches, inverse_of: :supplier, dependent: :destroy
 
   scope :customers, -> { where(type: 'Customer') }
   scope :vendors, -> { where(type: 'Vendor') }
-  scope :delivery_executive, -> { where(type: 'delivery_executive') }
+  scope :delivery_executive, -> { where(type: 'DeliveryExecutive') }
+  scope :suppliers, -> { where(type: 'Supplier') }
 
   # Validations
   validates :salutation, presence: true, length: {minimum: 2, maximum: 50}
