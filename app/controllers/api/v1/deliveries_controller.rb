@@ -25,7 +25,7 @@ class Api::V1::DeliveriesController < ApplicationController
 	private
 
 	def delivery_params
-		params.require(:delivery).permit(:id, :name)
+		params.require(:delivery).permit(:id, :address_id, :subscription_id, :remarks, :status)
 	end
 
 end

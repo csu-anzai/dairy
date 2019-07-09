@@ -25,7 +25,7 @@ class Api::V1::UnitsController < ApplicationController
 	private
 
 	def attr_choice_params
-		params.require(:unit).permit(:id, :name)
+		params.require(:unit).permit(:id, :name, :code, :active)
 	end
 
 end

@@ -25,7 +25,7 @@ class Api::V1::ItemCategoriesController < ApplicationController
 	private
 
 	def i_category_params
-		params.require(:item_category).permit(:id, :name)
+		params.require(:item_category).permit(:id, :name, :active)
 	end
 
 end

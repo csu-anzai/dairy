@@ -25,7 +25,7 @@ class Api::V1::SubscriptionsController < ApplicationController
 	private
 
 	def subscription_params
-		params.require(:subscription).permit(:id, :name)
+		params.require(:subscription).permit(:id, :address_id, :item_variant_id, :unit_id, :quantity, :frequency, :start_date, :end_date, :remarks, :call_verified, :status)
 	end
 
 end

@@ -25,7 +25,7 @@ class Api::V1::AttributeChoicesController < ApplicationController
 	private
 
 	def attr_choice_params
-		params.require(:attribute_choice).permit(:id, :name)
+		params.require(:attribute_choice).permit(:id, :item_attribute_id,  :name, :active)
 	end
 
 end

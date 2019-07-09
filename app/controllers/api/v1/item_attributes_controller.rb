@@ -25,7 +25,7 @@ class Api::V1::ItemAttributesController < ApplicationController
 	private
 
 	def item_attr_params
-		params.require(:item_attribute).permit(:id, :name)
+		params.require(:item_attribute).permit(:id, :name, :active)
 	end
 
 end

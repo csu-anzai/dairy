@@ -25,7 +25,7 @@ class Api::V1::LocalitiesController < ApplicationController
 	private
 
 	def locality_params
-		params.require(:locality).permit(:id, :name)
+		params.require(:locality).permit(:id, :route_id, :name, :description)
 	end
 
 end
