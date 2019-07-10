@@ -25,7 +25,7 @@ class Api::V1::ItemVariantsController < ApplicationController
 	private
 
 	def item_params
-		params.require(:item_variant).permit(:id, :name)
+		params.require(:item_variant).permit(:id, :item_id, :price)
 	end
 
 end

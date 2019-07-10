@@ -25,7 +25,7 @@ class Api::V1::AddressesController < ApplicationController
 	private
 
 	def address_params
-		params.require(:address).permit(:id, :name)
+		params.require(:address).permit(:id, :user_id, :locality_id, :address1, :address2, :addressable_id, :addressable_type, :latitude, :longitude, :receiver_name, :receiver_mobile, :land_mark, :zip, :status  )
 	end
 
 end
