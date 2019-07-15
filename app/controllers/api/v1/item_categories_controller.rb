@@ -4,33 +4,25 @@ class Api::V1::ItemCategoriesController < ApplicationController
 
 	def create
 	    @item_category = ItemCategory.create(i_category_params)
-	    render json: { message: 'Created successfully.', item_category: @item_category }, status: :ok if @item_category.save
 	    render json: {error: @item_category.errors}, status: :unprcessable_entity unless @item_category.valid?
 	end
 
 	def index
 		@item_category = ItemCategory.all
-    	render json: @item_category, status: :ok
 	end
 
 	def show
-		render json: @item_category, status: :ok
+		@item_category
 	end
 
 	def update
-		if @item_category.update(i_category_params)
-		    render json: { message: 'Update successfully.', item_category: @item_category }, status: :ok
-	    else
-	      render json: { error: @item_category.error }, status: :unprocessable_entity
-	    end
+		@item_category.update(i_category_params)
+	    render json: { error: @item_category.error }, status: :unprocessable_entity unless @item_category.valid?
 	end
 
 	def destroy
-		if @item_category.destroy
-	  		render json: {message: 'deleted successfully!'}, status: :ok
-	  	else
-	  		render json: { errors: @item_category.errors }, status: :unprocessable_entity
-	  	end
+		@item_category.destroy
+  		render json: { errors: @item_category.errors }, status: :unprocessable_entity unless @item_category
 	end
 
 	private
