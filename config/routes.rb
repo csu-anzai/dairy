@@ -16,11 +16,11 @@ Rails.application.routes.draw do
      resources :addresses, only: [:create, :index, :show, :update, :destroy]
      resources :routes, only: [:create, :index, :show, :update, :destroy]
      resources :localities, only: [:create, :index, :show, :update, :destroy]
+     resources :batches, only: [:create, :index, :show, :update, :destroy]
+     resources :stocks, only: [:create, :index, :show, :update, :destroy]
      resources :subscriptions, only: [:create, :index, :show, :update, :destroy]
      resources :addons, only: [:create, :index, :show, :update, :destroy]
      resources :deliveries, only: [:create, :index, :show, :update, :destroy]
-     resources :batches, only: [:create, :index, :show, :update, :destroy]
-     resources :stocks, only: [:create, :index, :show, :update, :destroy]
     end 
   end 
 end
