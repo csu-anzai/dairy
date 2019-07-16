@@ -1,6 +1,6 @@
-class CreateRoutes < ActiveRecord::Migration[5.2]
+class CreateLocations < ActiveRecord::Migration[5.2]
   def change
-    create_table :routes do |t|
+    create_table :locations do |t|
       t.references :vendor
       t.references :delivery_executive
       t.string :name
@@ -9,6 +9,7 @@ class CreateRoutes < ActiveRecord::Migration[5.2]
       t.string :latitude
       t.string :longitude
       t.string :status, default: 'active'
+      t.text :description
 
       t.timestamps
     end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do 
@@ -14,8 +16,7 @@ Rails.application.routes.draw do
      resources :customers, only: [:create, :index, :show, :update, :destroy]
      resources :delivery_executives, only: [:create, :index, :show, :update, :destroy]
      resources :addresses, only: [:create, :index, :show, :update, :destroy]
-     resources :routes, only: [:create, :index, :show, :update, :destroy]
-     resources :localities, only: [:create, :index, :show, :update, :destroy]
+     resources :locations, only: [:create, :index, :show, :update, :destroy]
      resources :batches, only: [:create, :index, :show, :update, :destroy]
      resources :stocks, only: [:create, :index, :show, :update, :destroy]
      resources :subscriptions, only: [:create, :index, :show, :update, :destroy]

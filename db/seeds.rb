@@ -33,8 +33,7 @@ sup_add = Address.create(address1: 'H.No- 09, Block- F, Near- SBI Bank', address
 cst_add = Address.create(address1: 'H.No- 387, Block- C, Near- Essar Petrol Pump', address2: 'address12', addressable: c1, receiver_name: 'My brther', receiver_mobile: '7845215487', zip: '65845')
 d_exe_add = Address.create(address1: 'H.No- 051, Sect-1, Near- Metro station', address2: 'address12', addressable: d_exe1, receiver_name: ' just deliver', receiver_mobile: '8541257412', zip: '854123')
 
-route1 = vnd1.routes.create(name: 'first route', start_point: 'abc first point', end_point: 'xyz last point', delivery_executive: d_exe1)
-locality1 = route1.localities.create(name: "Noida sec1", description: "This is a demo locality")
+location1 = vnd1.locations.create(name: 'first route', start_point: 'abc first point', end_point: 'xyz last point', delivery_executive: d_exe1, description: "This is a demo location")
 
 s1 = cst_add.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add_on1 = s1.create_active_addon(start_date: Date.today + 1.day, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
@@ -45,3 +44,4 @@ sup_bt = i_v.batches.create(vendor: sup1, code: 'SLY101', manufacturing_date: Da
 stock = vnd_bt.create_stock(quantity: 100, unit: u1)
 
 # Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

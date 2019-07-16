@@ -1,6 +1,14 @@
 
 en:
   admin:
+    categories:
+      i_c:
+        label: "Item Category"
+      i_a:
+        label: "Item Attribute"
+      i_v:
+        label: "Item Variant"
+
     products:
       category:
         label: "Categories List"
@@ -10,8 +18,13 @@ en:
         label: "Product Variants"
       product:
         label: "Products List"
-      cream_level:
-        label: "Cream Level"
+
+    subscriptions:
+      subscribe:
+        label: "Subscriptions List"
+      add_ons:
+        label: "Add_ons List"
+
     cattle:
       category:
         label: "Cattle Categories"
@@ -23,14 +36,13 @@ en:
         label: "Cattle List"
       current_status:
         label: "Cattle Current Status"
-    service:
-      state:
-        label: "Service State"
+    
     users:
       admin_user:
         label: "Super Admin"
       user:
         label: "Users List"
+
   status:
       active: "Active"
       inactive: "Inactive"
