@@ -10,20 +10,24 @@ en:
         label: "Item Variant"
 
     products:
-      category:
-        label: "Categories List"
-      origin:
-        label: "Product Origins"
-      variant:
-        label: "Product Variants"
-      product:
-        label: "Products List"
+      stock:
+        label: "Stocks"
+      batch:
+        label: "Batches"
+      unit:
+        label: "Units"
+      location:
+        label: "Locations"
+      item:
+        label: "Items"
+      a_c:
+        label: "Attribute Choices"
 
     subscriptions:
       subscribe:
-        label: "Subscriptions List"
+        label: "Subscriptions"
       add_ons:
-        label: "Add_ons List"
+        label: "Add_ons"
 
     cattle:
       category:
@@ -33,7 +37,7 @@ en:
       variant:
         label: "Cattle Variants"
       cattle_list:
-        label: "Cattle List"
+        label: "Cattle"
       current_status:
         label: "Cattle Current Status"
     
@@ -41,7 +45,9 @@ en:
       admin_user:
         label: "Super Admin"
       user:
-        label: "Users List"
+        label: "Users"
+      address:
+        label: "Addresses"
 
   status:
       active: "Active"

@@ -1,5 +1,6 @@
 ActiveAdmin.register Unit do
 
+  menu priority: 3, label: proc { I18n.t("admin.products.unit.label") }, parent: 'Products'
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

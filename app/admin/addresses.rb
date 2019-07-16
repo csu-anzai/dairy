@@ -1,5 +1,6 @@
 ActiveAdmin.register Address do
 
+  menu priority: 3, label: proc { I18n.t("admin.users.address.label") }, parent: 'Profiles'
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
