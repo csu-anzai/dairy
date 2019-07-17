@@ -1,9 +1,8 @@
 ActiveAdmin.register Addon do
+  
   menu priority: 2, label: proc { I18n.t("admin.subscriptions.add_ons.label") }, parent: 'Subscription'
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  permit_params :subscription_id, :quantity, :unit_id, :start_date, :end_date, :remarks, :status, :created_by, :updated_by
+  
+  permit_params :subscription_id, :title, :quantity, :unit_id, :start_date, :end_date, :remarks, :status, :created_by, :updated_by
   #
   # or
   #
@@ -14,7 +13,8 @@ ActiveAdmin.register Addon do
   # end
   form do |f|
     f.inputs do
-      f.input :subscription_id, as: :select, :prompt => "Select Subscription", collection: Subscription.all.collect {|subs| [subs.quantity, subs.id] }
+      f.input :subscription_id, as: :select, :prompt => "Select Subscription", collection: Subscription.all.collect {|subs| [subs.title, subs.id] }
+      f.input :title
       # f.input :quantity
       f.input :unit_id
       f.input :start_date
