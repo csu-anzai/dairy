@@ -3,7 +3,7 @@ ActiveAdmin.register Addon do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  # permit_params :list, :of, :attributes, :on, :model
+  permit_params :subscription_id, :quantity, :unit_id, :start_date, :end_date, :remarks, :status
   #
   # or
   #
