@@ -28,12 +28,15 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
-    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
+    t.string "title"
+    t.decimal "quantity", precision: 9, scale: 3
     t.datetime "start_date"
     t.datetime "end_date"
     t.text "remarks"
     t.string "status", default: "active"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subscription_id"], name: "index_addons_on_subscription_id"
@@ -43,17 +46,20 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "location_id"
+    t.string "addressable_type"
     t.string "address1"
     t.string "address2"
     t.integer "addressable_id"
-    t.string "addressable_type"
     t.string "latitude"
     t.string "longitude"
     t.string "receiver_name"
     t.string "receiver_mobile"
     t.string "land_mark"
     t.string "zip"
+    t.text "remarks"
     t.string "status", default: "active"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_id"], name: "index_addresses_on_location_id"
@@ -61,21 +67,34 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   end
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "attribute_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.bigint "item_attribute_id"
+    t.string "name"
     t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_attribute_id"], name: "index_attribute_choices_on_item_attribute_id"
@@ -95,6 +114,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.datetime "manufacturing_date"
     t.datetime "expiry_date"
     t.string "status", default: "active"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_variant_id"], name: "index_batches_on_item_variant_id"
@@ -105,7 +126,9 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.bigint "address_id"
     t.bigint "subscription_id"
     t.text "remarks"
-    t.string "status", default: "dending"
+    t.string "status", default: "pending"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
@@ -123,6 +146,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "item_attributes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -144,13 +169,18 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "item_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "item_variants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
-    t.decimal "price", precision: 7, scale: 2
+    t.decimal "price", precision: 9, scale: 2
+    t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_variants_on_item_id"
@@ -160,6 +190,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.string "name"
     t.bigint "item_category_id"
     t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
@@ -175,6 +207,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.string "longitude"
     t.string "status", default: "active"
     t.text "description"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["delivery_executive_id"], name: "index_locations_on_delivery_executive_id"
@@ -183,9 +217,11 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "batch_id"
-    t.decimal "quantity", precision: 9, scale: 3
     t.bigint "unit_id"
+    t.decimal "quantity", precision: 9, scale: 3
     t.boolean "active", default: true
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["batch_id"], name: "index_stocks_on_batch_id"
@@ -196,6 +232,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.bigint "address_id"
     t.bigint "item_variant_id"
     t.bigint "unit_id"
+    t.string "title"
     t.decimal "quantity", precision: 9, scale: 3
     t.integer "frequency"
     t.datetime "start_date"
@@ -203,6 +240,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.text "remarks"
     t.boolean "call_verified"
     t.string "status", default: "inactive"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_subscriptions_on_address_id"
@@ -214,6 +253,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.string "name"
     t.string "code"
     t.boolean "active", default: false
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -226,11 +267,19 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.string "email"
     t.string "mobile"
     t.date "date_of_birth"
+    t.string "password_digest"
     t.string "type"
-    t.boolean "premium", default: false
+    t.boolean "premier", default: false
     t.boolean "call_verified", default: false
     t.boolean "blacklisted", default: false
-    t.boolean "active", default: true
+    t.boolean "active", default: false
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -238,7 +287,10 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "vendor_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "user_id"
-    t.decimal "price", precision: 7, scale: 2
+    t.decimal "price", precision: 9, scale: 2
+    t.boolean "active", default: false
+    t.bigint "created_by"
+    t.bigint "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_vendor_items_on_item_id"

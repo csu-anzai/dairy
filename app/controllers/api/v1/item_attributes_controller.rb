@@ -33,7 +33,7 @@ class Api::V1::ItemAttributesController < ApplicationController
 	end
 
 	def item_attr_params
-		params.require(:item_attribute).permit(:id, :name, :active)
+		params.require(:item_attribute).permit(:id, :name, :active, :created_by, :updated_by)
 	end
 
 end

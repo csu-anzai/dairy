@@ -1,11 +1,12 @@
 ActiveAdmin.register AdminUser do
 
   menu priority: 1, label: proc { I18n.t("admin.users.admin_user.label") }, parent: 'Profiles'
-  permit_params :email, :password, :password_confirmation
+  permit_params :title, :email, :password, :password_confirmation
 
   index do
     selectable_column
     id_column
+    column :title
     column :email
     column :current_sign_in_at
     column :sign_in_count
@@ -20,6 +21,7 @@ ActiveAdmin.register AdminUser do
 
   form do |f|
     f.inputs do
+      f.input :title
       f.input :email
       f.input :password
       f.input :password_confirmation
