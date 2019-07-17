@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'activeadmin'
+gem 'devise'
+gem 'react-rails'
 gem 'rails', '~> 5.2.3'
 gem 'mysql2'
 gem 'puma', '~> 3.11'

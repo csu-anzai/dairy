@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_043457) do
+ActiveRecord::Schema.define(version: 2019_07_16_084911) do
+
+  create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
@@ -28,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_043457) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "locality_id"
+    t.bigint "location_id"
     t.string "address1"
     t.string "address2"
     t.integer "addressable_id"
@@ -42,8 +56,20 @@ ActiveRecord::Schema.define(version: 2019_07_03_043457) do
     t.string "status", default: "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["locality_id"], name: "index_addresses_on_locality_id"
+    t.index ["location_id"], name: "index_addresses_on_location_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "attribute_choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -139,16 +165,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_043457) do
     t.index ["item_category_id"], name: "index_items_on_item_category_id"
   end
 
-  create_table "localities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "route_id"
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["route_id"], name: "index_localities_on_route_id"
-  end
-
-  create_table "routes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "vendor_id"
     t.bigint "delivery_executive_id"
     t.string "name"
@@ -157,10 +174,11 @@ ActiveRecord::Schema.define(version: 2019_07_03_043457) do
     t.string "latitude"
     t.string "longitude"
     t.string "status", default: "active"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["delivery_executive_id"], name: "index_routes_on_delivery_executive_id"
-    t.index ["vendor_id"], name: "index_routes_on_vendor_id"
+    t.index ["delivery_executive_id"], name: "index_locations_on_delivery_executive_id"
+    t.index ["vendor_id"], name: "index_locations_on_vendor_id"
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

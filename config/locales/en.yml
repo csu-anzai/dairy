@@ -1,17 +1,34 @@
 
 en:
   admin:
+    categories:
+      i_c:
+        label: "Item Category"
+      i_a:
+        label: "Item Attribute"
+      i_v:
+        label: "Item Variant"
+
     products:
-      category:
-        label: "Categories List"
-      origin:
-        label: "Product Origins"
-      variant:
-        label: "Product Variants"
-      product:
-        label: "Products List"
-      cream_level:
-        label: "Cream Level"
+      stock:
+        label: "Stocks"
+      batch:
+        label: "Batches"
+      unit:
+        label: "Units"
+      location:
+        label: "Locations"
+      item:
+        label: "Items"
+      a_c:
+        label: "Attribute Choices"
+
+    subscriptions:
+      subscribe:
+        label: "Subscriptions"
+      add_ons:
+        label: "Add_ons"
+
     cattle:
       category:
         label: "Cattle Categories"
@@ -20,17 +37,18 @@ en:
       variant:
         label: "Cattle Variants"
       cattle_list:
-        label: "Cattle List"
+        label: "Cattle"
       current_status:
         label: "Cattle Current Status"
-    service:
-      state:
-        label: "Service State"
+    
     users:
       admin_user:
         label: "Super Admin"
       user:
-        label: "Users List"
+        label: "Users"
+      address:
+        label: "Addresses"
+
   status:
       active: "Active"
       inactive: "Inactive"
