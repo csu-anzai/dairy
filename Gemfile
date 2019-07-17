@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'activeadmin'
+gem 'bcrypt'
 gem 'devise'
 gem 'react-rails'
 gem 'rails', '~> 5.2.3'

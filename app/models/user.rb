@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  has_secure_password
   STATUSES = %w[active inactive paused].freeze
   # Associations
   has_many :addresses, as: :addressable
