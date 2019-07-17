@@ -25,7 +25,7 @@ class Api::V1::AddonsController < ApplicationController
 	private
 
 	def addon_params
-		params.require(:addon).permit(:id, :subscription_id, :quantity, :unit_id, :start_date, :end_date, :remarks, :status )
+		params.require(:addon).permit(:id, :subscription_id, :title, :quantity, :unit_id, :start_date, :end_date, :remarks, :status, :created_by, :updated_by )
 	end
 
 end

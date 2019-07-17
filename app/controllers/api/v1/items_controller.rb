@@ -25,7 +25,7 @@ class Api::V1::ItemsController < ApplicationController
 	private
 
 	def item_params
-		params.require(:item).permit(:id, :item_category_id, :name, :active)
+		params.require(:item).permit(:id, :item_category_id, :name, :active, :created_by, :updated_by)
 	end
 
 end

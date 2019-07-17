@@ -2,7 +2,7 @@ ActiveAdmin.register ItemCategory do
 
   menu priority: 1, label: proc { I18n.t("admin.categories.i_c.label") }, parent: 'Category'
   
-  permit_params :name, :active
+  permit_params :name, :active, :created_by, :updated_by
   
   # permit_params do
   #   permitted = [:permitted, :attributes]

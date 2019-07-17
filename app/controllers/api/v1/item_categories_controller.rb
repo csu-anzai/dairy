@@ -33,7 +33,7 @@ class Api::V1::ItemCategoriesController < ApplicationController
 	end
 
 	def i_category_params
-		params.require(:item_category).permit(:id, :name, :active)
+		params.require(:item_category).permit(:id, :name, :active, :created_by, :updated_by)
 	end
 
 end

@@ -25,7 +25,7 @@ class Api::V1::BatchesController < ApplicationController
 	private
 
 	def batch_params
-		params.require(:batch).permit(:id, :user_id, :item_variant_id, :code, :manufacturing_date, :expiry_date, :status)
+		params.require(:batch).permit(:id, :user_id, :item_variant_id, :code, :manufacturing_date, :expiry_date, :status, :created_by, :updated_by)
 	end
 
 end

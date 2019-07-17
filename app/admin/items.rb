@@ -2,7 +2,7 @@ ActiveAdmin.register Item do
 
   menu priority: 1, label: proc { I18n.t("admin.products.item.label") }, parent: 'Products'
   
-  permit_params :item_category_id, :name, :active
+  permit_params :item_category_id, :name, :active, :created_by, :updated_by
   
   # permit_params do
   #   permitted = [:permitted, :attributes]
