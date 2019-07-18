@@ -12,7 +12,7 @@ ActiveAdmin.register Address do
 
   form do |f|
     f.inputs do
-      # f.input :user_id, as: :select, :prompt => "Select User", collection: User.all.collect {|usr| [usr.name, usr.id] }
+      # f.input :user_id
       f.input :location_id, as: :select, :prompt => "Select Location", collection: Location.all.collect {|loc| [ "#{loc.name} : #{loc.start_point} - #{loc.end_point}", loc.id ] }
       f.input :addressable, as: :select, :prompt => "Select User", collection: User.all
       f.input :address1

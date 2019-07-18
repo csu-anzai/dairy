@@ -4,19 +4,18 @@ ActiveAdmin.register Addon do
   
   permit_params :subscription_id, :title, :quantity, :unit_id, :start_date, :end_date, :remarks, :status, :created_by, :updated_by
   #
-  # or
-  #
   # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
   form do |f|
     f.inputs do
       f.input :subscription_id, as: :select, :prompt => "Select Subscription", collection: Subscription.all.collect {|subs| [subs.title, subs.id] }
       f.input :title
-      # f.input :quantity
-      f.input :unit_id
+      f.input :quantity
+      f.input :unit_id, as: :select, :prompt => "Select Unit", collection: Unit.all
       f.input :start_date
       f.input :end_date
       f.input :remarks
