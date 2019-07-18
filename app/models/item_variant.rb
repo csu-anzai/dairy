@@ -15,5 +15,5 @@ class ItemVariant < ApplicationRecord
   has_many :in_stock_item_attributes, through: :stocks, source: :item_attributes
 
   # Validations
-  validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/, message: "must be valid!" }, numericality: { greater_than: 0, less_than: 5000 }
+  validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/, message: "must be valid!" }, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5000 }
 end

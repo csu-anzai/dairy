@@ -9,5 +9,15 @@ ActiveAdmin.register ItemVariant do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs do
+      f.input :item_id, as: :select, :prompt => "Select Item", collection: Item.all.collect {|i| [i.name, i.id] }
+      f.input :price
+      f.input :created_by, :input_html => { :value => current_admin_user.id }, as: :hidden
+      f.input :updated_by, :input_html => { :value => current_admin_user.id }, as: :hidden
+    end
+    f.actions
+  end
   
 end

@@ -16,7 +16,7 @@ class Subscription < ApplicationRecord
   scope :active, -> { where(status: 'active') }
 
   # Validations
-  validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/ , message: "must be valid!"}, numericality: { greater_than: 0, less_than: 1000 }
+  validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/ , message: "must be valid!"}, numericality: { greater_than_or_equal_to: 0.25, less_than_or_equal_to: 1000 }
   validates :frequency, presence: true, length: {minimum: 1, maximum: 3 }
   validates :start_date, presence: true, date: { after: Proc.new { Date.today }, message: "must be from #{(Date.today + 1).to_s} onwords!" }
   validates :end_date, presence: true, date: { after_or_equal_to:  :start_date, message: "must be after the start date!" }
