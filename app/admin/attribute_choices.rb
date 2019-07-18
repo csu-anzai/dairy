@@ -4,12 +4,6 @@ ActiveAdmin.register AttributeChoice do
   
   permit_params :item_attribute_id,  :name, :active, :created_by, :updated_by
   
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-
   form do |f|
     f.inputs do
       f.input :item_attribute_id, as: :select, :prompt => "Select Attribute", collection: ItemAttribute.all.collect {|i_atr| [i_atr.name, i_atr.id] }
