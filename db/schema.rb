@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "subscription_id"
+    t.bigint "user_id"
     t.text "remarks"
     t.string "status", default: "pending"
     t.bigint "created_by"
@@ -133,6 +134,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
     t.index ["subscription_id"], name: "index_deliveries_on_subscription_id"
+    t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -297,6 +299,4 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.index ["user_id"], name: "index_vendor_items_on_user_id"
   end
 
-  add_foreign_key "deliveries", "addresses"
-  add_foreign_key "deliveries", "subscriptions"
 end
