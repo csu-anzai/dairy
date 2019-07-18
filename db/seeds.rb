@@ -35,7 +35,7 @@ d_exe_add = Address.create(address1: 'H.No- 051, Sect-1, Near- Metro station', a
 
 location1 = vnd1.locations.create(name: 'first route', start_point: 'abc first point', end_point: 'xyz last point', delivery_executive: d_exe1, description: "This is a demo location")
 
-s1 = cst_add.subscriptions.create(item_variant: i_v, quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
+s1 = cst_add.subscriptions.create(item_variant: i_v, title: "First subscription", quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add_on1 = s1.create_active_addon(start_date: Date.today + 1.day, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
 
 vnd_bt = i_v.batches.create(vendor: vnd1, code: 'VN103', manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
