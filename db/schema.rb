@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "subscription_id"
-    t.bigint "user_id"
+    t.bigint "delivery_executive_id"
     t.text "remarks"
     t.string "status", default: "pending"
     t.bigint "created_by"
@@ -133,8 +133,8 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_deliveries_on_address_id"
+    t.index ["delivery_executive_id"], name: "index_deliveries_on_delivery_executive_id"
     t.index ["subscription_id"], name: "index_deliveries_on_subscription_id"
-    t.index ["user_id"], name: "index_deliveries_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
 
   create_table "item_variants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
+    t.string "title"
     t.decimal "price", precision: 9, scale: 2
     t.boolean "active", default: true
     t.bigint "created_by"
