@@ -23,10 +23,10 @@ u1 = Unit.create(name: 'Kilo Grams', code: 'KGS')
 u2 = Unit.create(name: 'Litre', code: 'LTR')
 # ========================================= #
 
-vnd1 = Vendor.create(name: 'Vendor1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'ven_user', password: 'password', password_confirmation: 'password', email: 'vandor@user.com', mobile: '9874562125')
-sup1 = Supplier.create(name: 'First supplier', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1975', username: 'supplier_user', password: 'password', password_confirmation: 'password', email: 'supplier@user.com', mobile: '8857412584')
-c1 = Customer.create(name: 'Customer1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1990', username: 'cstm_user', password: 'password', password_confirmation: 'password', email: 'customer@user.com', mobile: '8547125481')
-d_exe1 = DeliveryExecutive.create(name: 'delivery_executive 1', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'del_exe_one', password: 'password', password_confirmation: 'password', email: 'delivery_executive@user.com', mobile: '7687452178')
+vnd1 = Vendor.create(name: 'GwalG vendor', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'ven_user', password: 'password', password_confirmation: 'password', email: 'vandor@user.com', mobile: '9874562125')
+sup1 = Supplier.create(name: 'Main supplier', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1975', username: 'supplier_user', password: 'password', password_confirmation: 'password', email: 'supplier@user.com', mobile: '8857412584')
+c1 = Customer.create(name: 'Customer', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1990', username: 'cstm_user', password: 'password', password_confirmation: 'password', email: 'customer@user.com', mobile: '8547125481')
+d_exe1 = DeliveryExecutive.create(name: 'First delivery executive', salutation: 'Mr.', gender: "male", date_of_birth: '19-12-1989', username: 'del_exe_one', password: 'password', password_confirmation: 'password', email: 'delivery_executive@user.com', mobile: '7687452178')
 
 vnd_add = Address.create(address1: 'H.No- 119, Block- A, Near- Govt. hospital', address2: 'address2', addressable: vnd1, receiver_name: 'My mother', receiver_mobile: '9854215784', zip: '521456')
 sup_add = Address.create(address1: 'H.No- 09, Block- F, Near- SBI Bank', address2: 'address2', addressable: sup1, receiver_name: 'someone', receiver_mobile: '9854782145', zip: '954782')

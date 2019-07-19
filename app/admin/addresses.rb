@@ -9,8 +9,8 @@ ActiveAdmin.register Address do
   form do |f|
     f.inputs do
       # f.input :user_id
-      f.input :location_id, as: :select, :prompt => "Select Location", collection: Location.all.collect {|loc| [ "#{loc.name} : #{loc.start_point} - #{loc.end_point}", loc.id ] }
-      f.input :addressable, as: :select, :prompt => "Select User Type", collection: User.all
+      f.input :location_id, as: :select, :prompt => "☯ Select Location", collection: Location.all.collect {|loc| [ "#{loc.name} : #{loc.start_point} - #{loc.end_point}", loc.id ] }
+      f.input :addressable, as: :select, :prompt => "☻☥ Select User Type", collection: User.all.collect { |u| ["☻ #{u.name} , ☎ #{u.mobile}", u.id] }
       f.input :addressable_type, :input_html => { :value => 'User' }, as: :hidden
       f.input :address1
       f.input :address2
@@ -21,7 +21,7 @@ ActiveAdmin.register Address do
       f.input :land_mark
       f.input :zip
       f.input :remarks
-      f.input :status, as: :select, :prompt => "Select Status", :collection => STATUS
+      f.input :status, as: :select, :prompt => "✔ Select Status", :collection => STATUS
       f.input :created_by, :input_html => { :value => current_admin_user.id }, as: :hidden
       f.input :updated_by, :input_html => { :value => current_admin_user.id }, as: :hidden
     end
