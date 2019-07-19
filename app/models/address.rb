@@ -9,7 +9,7 @@ class Address < ApplicationRecord
   has_many :deliveries, inverse_of: :address, dependent: :destroy
 
   # Validations
-  validates :address1, length: {minimum: 10, maximum: 180, message: "must have 10 - 180 characters!"}, presence: true
+  validates :address1, length: {minimum: 5, maximum: 180, message: "must have 5 - 180 characters!"}, presence: true
   validates :address2, length: {maximum: 1500, message: "must be less than 1500 characters!"}, allow_blank: true
   validates :receiver_name, allow_blank: true, length: {minimum: 4, maximum: 90, message: "must have 4 - 90 characters!"}
   validates :receiver_mobile, presence: true, numericality: true, length: {minimum: 10, maximum: 15, message: 'invalid!'}
