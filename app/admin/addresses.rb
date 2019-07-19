@@ -10,7 +10,7 @@ ActiveAdmin.register Address do
     f.inputs do
       # f.input :user_id
       f.input :location_id, as: :select, :prompt => "Select Location", collection: Location.all.collect {|loc| [ "#{loc.name} : #{loc.start_point} - #{loc.end_point}", loc.id ] }
-      f.input :addressable, collection: User.all
+      f.input :addressable, as: :select, :prompt => "Select User Type", collection: User.all
       f.input :addressable_type, :input_html => { :value => 'User' }, as: :hidden
       f.input :address1
       f.input :address2

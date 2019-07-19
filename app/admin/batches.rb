@@ -1,6 +1,6 @@
 ActiveAdmin.register Batch do
 
-  menu priority: 2, label: proc { I18n.t("admin.products.batch.label") }, parent: 'Stock'
+  menu priority: 1, label: proc { I18n.t("admin.products.batch.label") }, parent: 'Stocks'
   
   permit_params :user_id, :item_variant_id, :code, :manufacturing_date, :expiry_date, :status, :created_by, :updated_by
 

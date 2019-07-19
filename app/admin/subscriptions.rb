@@ -7,7 +7,7 @@ ActiveAdmin.register Subscription do
   form do |f|
     f.inputs do
       f.input :address_id, as: :select, :prompt => "Select user and address", 
-              collection: Address.all.collect {|add| [(['(',add.addressable.name, ')-'].join('') + add.address1), add.id] }
+              collection: Address.all.collect {|add| [(['( ',add.addressable.name, ', Mob. ', add.addressable.mobile, ' ) @ '].join('') + add.address1), add.id] }
       f.input :item_variant_id, as: :select, :prompt => "Select Item", collection: ItemVariant.all.collect {|i_var| [i_var.title, i_var.id] }
       f.input :unit_id, as: :select, :prompt => "Select Unit", collection: Unit.all.collect {|u| [u.name, u.id] }
       f.input :title
