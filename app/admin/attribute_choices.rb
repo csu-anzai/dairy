@@ -1,6 +1,6 @@
 ActiveAdmin.register AttributeChoice do
 
-  menu priority: 2, label: proc { I18n.t("admin.products.a_c.label") }, parent: 'Products'
+  menu priority: 3, label: proc { I18n.t("admin.products.a_c.label") }, parent: 'Categories'
   
   permit_params :item_attribute_id,  :name, :active, :created_by, :updated_by
   

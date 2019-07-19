@@ -1,6 +1,6 @@
 ActiveAdmin.register ItemAttribute do
 
-  menu priority: 2, label: proc { I18n.t("admin.categories.i_a.label") }, parent: 'Category'
+  menu priority: 2, label: proc { I18n.t("admin.categories.i_a.label") }, parent: 'Categories'
   
   permit_params :name, :active, :created_by, :updated_by
 
