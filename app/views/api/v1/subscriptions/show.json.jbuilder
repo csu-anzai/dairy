@@ -1,0 +1,1 @@
+json.(@subscription, :id, :title, :quantity, :frequency, :start_date, :end_date, :remarks, :call_verified, :status, :created_by, :updated_by, :created_at, :updated_at)
