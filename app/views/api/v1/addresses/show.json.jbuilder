@@ -1,0 +1,1 @@
+json.(@address, :id, :address1, :latitude, :longitude, :receiver_name, :receiver_mobile, :land_mark, :zip, :remarks, :status, :created_by, :updated_by, :created_at, :updated_at)
