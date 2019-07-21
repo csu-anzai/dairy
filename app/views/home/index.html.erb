@@ -1,122 +1,13 @@
 <body>
 	<div id="home">
 		<!-- header -->
-		<header class="header-style fixed-top">
-			<div class="container">
-				<div class="header d-lg-flex justify-content-between align-items-center">
-					<!-- logo -->
-					<h1 class="logo text-center">
-						<a href="/">GwalG<i class="fa fa-pagelines" aria-hidden="true"></i>
-						</a>
-					</h1>
-					<!-- //logo -->
-					<!-- nav -->
-					<div class="nav_w3ls">
-						<nav>
-							<label for="drop" class="toggle toogle-2">Menu</label>
-							<input type="checkbox" id="drop" />
-							<ul class="menu">
-								<li class="active ml-0"><a href="/">Home</a></li>
-								<li><a href="#about">About Us</a></li>
-								<li><a href="#services">Services</a></li>
-								<li><a href="#team">Team</a></li>
-								<!-- <li>
-									<label for="drop-2" class="toggle toggle-drop">Pages <span class="fa fa-angle-down" aria-hidden="true"></span>
-									</label>
-									<a href="#">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-									<input type="checkbox" id="drop-2" />
-									<ul class="list-unstyled">
-										<li><a href="#why" class="drop-text">Why Choose Us</a></li>
-										<li class="my-2"><a href="#partners" class="drop-text">Our Partners</a></li>
-										<li><a href="#testi" class="drop-text">Testimonials</a></li>
-									</ul>
-								</li> -->
-								<li><a href="#process">Process</a></li>
-								<li><a href="#gallery">Products</a></li>
-								<li class="mr-0"><a href="#subscribe">Subscribe</a></li>
-							</ul>
-						</nav>
-					</div>
-					<!-- //nav -->
-				</div>
-			</div>
-		</header>
+			<%= render 'common/header' %>
 		<!-- //header -->
 
 		<!-- banner -->
-		<div class="banner_w3lspvt">
-			<div class="csslider infinity" id="slider1">
-				<input type="radio" name="slides" checked="checked" id="slides_1" />
-				<input type="radio" name="slides" id="slides_2" />
-				<input type="radio" name="slides" id="slides_3" />
-				<input type="radio" name="slides" id="slides_4" />
-				<ul>
-					<li>
-						<div class="banner-top">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Welcome to GwalG</h3>
-									<p class="text-li mx-auto mt-2">GwalG aims to provide door-step delivery of milk to meet customer requirement and helps to maintain Healty.</p>
-									<a href="#subscribe" class="button-style scroll mt-sm-5 mt-4">Subscribe Now</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top1">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">GwalG For Healthy Service</h3>
-									<p class="text-li mx-auto mt-2">GwalG aims to provide door-step delivery of milk to meet customer requirement and helps to maintain Healty.</p>
-									<a href="#subscribe" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top2">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Welcome to Plants</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#subscribe" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="banner-top3">
-							<div class="container">
-								<div class="w3layouts-banner-info text-center">
-									<h3 class="text-wh">Plants For Healthy</h3>
-									<p class="text-li mx-auto mt-2">Ut enim ad minim quis nostrud exerci sed do eiusmod tempor incididunt ut
-										labore et
-										dolore magna aliqua.</p>
-									<a href="#subscribe" class="button-style scroll mt-sm-5 mt-4">Read More</a>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<div class="arrows">
-					<label for="slides_1"></label>
-					<label for="slides_2"></label>
-					<label for="slides_3"></label>
-					<label for="slides_4"></label>
-				</div>
-			</div>
-			<div class="icon-w3">
-				<a href="#about" class="scroll">
-					<i class="fa fa-angle-double-down" aria-hidden="true"></i>
-				</a>
-			</div>
-		</div>
+			<%= render 'static/banner' %>
 		<!-- //banner -->
 	</div>
-	<!-- //main -->
-
 	<!-- about -->
 	<section class="about" id="about">
 		<div class="container">
@@ -502,147 +393,78 @@
 		</div>
 	</section>
 	<!-- gallery model-->
-	<!-- popup-->
 	<div id="gal1" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g1.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal2" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g2.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal3" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g3.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup3 -->
-	<!-- popup-->
 	<div id="gal4" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g4.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal5" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g5.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal6" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g6.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal7" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g7.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal8" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g8.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
-	<!-- popup-->
 	<div id="gal9" class="popup-effect animate">
 		<div class="popup">
 			<%= image_tag("g5.jpg", class: "img-fluid", alt: "Popup Image" ) %>
-			<h4 class="p-mask">Plants</h4>
+			<h4 class="p-mask">GwalG</h4>
 			<a class="close" href="#gallery">&times;</a>
 		</div>
 	</div>
-	<!-- //popup -->
 	<!-- //gallery -->
 
 	<!-- contact -->
 	<section class="contact py-5" id="subscribe">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="w3ls-title text-wh text-center font-weight-bold mb-5">Subscribe <span class="font-weight-light">Milk</span></h3>
-			<div class="row contact-form">
-				<div class="offset-lg-2"></div>
-				<div class="col-lg-8 wthree-form-left">
-					<!-- contact form grid -->
-					<fieldset class="contact-top1" data-blast="borderColor">
-						<legend class="text-wh let text-capitalize">Feel to subscribe</legend>
-						<form action="#" method="post" class="f-color">
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-5">
-										<label for="contactusername">Name</label>
-										<input type="text" class="form-control full-width" name="name" id="contactusername" required placeholder="Enter name...">
-									</div>
-									<div class="col-lg-5 offset-lg-2">
-										<label for="contactusername">Quantity</label>
-										<input type="text" class="form-control full-width" name="name" id="contactmobile" required placeholder="Enter quantity...">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-5">
-											<label for="contactemail">Mobile</label>
-											<input type="text" class="form-control full-width" name="email" id="contactemail" required placeholder="Enter mobile...">
-									</div>
-									<div class="col-lg-5 offset-lg-2">
-										<label for="contactusername">Email</label>
-										<input type="email" class="form-control full-width" name="name" id="contactmobile" required placeholder="Enter emial...">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-5">
-										<label for="contactcomment">Start Date</label>
-										<input type="" name="" class="form-control" rows="5" name="message" id="contactcomment" required placeholder="Enter start date...">
-									</div>
-									<div class="col-lg-5 offset-lg-2">
-										<label for="contactcomment">End Date</label>
-										<input class="form-control" rows="5" name="message" id="contactcomment" required placeholder="Enter end date...">
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="contactusername">Address</label>
-									<textarea class="form-control" rows="4" name="message" id="contactcomment" required placeholder="your address..."></textarea>
-							</div>
-							<button type="submit" class="btn btn-block" data-blast="bgColor">Subscribe</button>
-						</form>
-					</fieldset>
-					<!--  //contact form grid ends here -->
-				</div>
-				<div class="offset-lg-2"></div>
-			</div>
+			<!-- subscription  start-->
+			<%= render 'static/subscription' %>
+			<!-- subscription end -->
 			<!-- contact address -->
 			<div class="row address bg-li">
 				<div class="col-lg-4 address-grid">
@@ -683,121 +505,16 @@
 		</div>
 	</section>
 	<!-- //contact -->
-
 	<!-- partners -->
-	<!-- <section class="partners py-5" id="partners">
-		<div class="container py-xl-5 py-4">
-			<h3 class="w3ls-title text-da text-center font-weight-bold mb-5">Our <span class="font-weight-light">Partners</span></h3>
-			<div class="row grid-part text-center pt-4">
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-angellist"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-opencart"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-lastfm"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-openid"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-skyatlas"></i></a>
-					</div>
-				</div>
-				<div class="col-md-2 col-4 mt-md-0 mt-3">
-					<div class="parts-w3pvt bg-wh">
-						<a href="#"><i class="fa fa-ravelry"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
+		<%#= render 'static/partners' %>	
 	<!-- //partners -->
 
 	<!-- footer -->
-	<footer class="text-center py-4">
-		<div class="container py-xl-5 py-4">
-			<h3 class="text-da let mb-3">We Provide Best Services</h3>
-			<p class="footer-para mx-auto">To make service transparent for all, we started this application. Nowadays all are providing facilities in City but what about Village, we also have rght to have the same, to meet urban technical facility in our vllage we are here for you.</p>
-			<!-- logo -->
-			<h2 class="logo2 text-center mt-3">
-				<a href="index.html">
-					GwalG<i class="fa fa-pagelines" aria-hidden="true"></i>
-				</a>
-			</h2>
-			<!-- //logo -->
-			<!-- address -->
-			<div class="contact-left-footer mt-4">
-				<h6 class="text-da let mb-3">Pure for sure.</h6>
-				<ul>
-					<li>
-						<p>
-							<i class="fa fa-map-marker mr-2"></i>Tamkuhi Road, Seorahi, Kushinagar, UP, India.
-						</p>
-					</li>
-					<li class="mx-4">
-						<p>
-							<i class="fa fa-phone mr-2"></i>(+91) 9870 444 870.
-						</p>
-					</li>
-					<li>
-						<p class="text-wh">
-							<i class="fa fa-envelope-open mr-2"></i>
-							<a href="mailto:info@gwalg.com">info@gwalg.com</a>
-						</p>
-					</li>
-				</ul>
-			</div>
-			<!-- //address -->
-			<!-- social icons -->
-			<div class="footercopy-social mt-4">
-				<ul>
-					<li>
-						<a href="#">
-							<span class="fa fa-facebook-f"></span>
-						</a>
-					</li>
-					<li class="mx-2">
-						<a href="#">
-							<span class="fa fa-twitter"></span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="fa fa-rss"></span>
-						</a>
-					</li>
-					<li class="ml-2">
-						<a href="#">
-							<span class="fa fa-vk"></span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- //social icons -->
-			<!-- copyright -->
-			<div class="w3l-copy text-center mt-5">
-				<p class="text-da">© <%= Time.now.strftime("%Y") %> GwalG. All rights reserved | Design by
-					<a target="blank" href="http://w3layouts.com/">W3layouts</a>
-				</p>
-			</div>
-			<!-- //copyright -->
-		</div>
-	</footer>
+		<%= render 'common/footer' %>
 	<!-- //footer -->
 
 	<!-- move top icon -->
-	<a href="#home" class="move-top text-center"></a>
+		<%= render 'common/move_to_top' %>
 	<!-- //move top icon -->
 
 </body>
