@@ -1,5 +1,7 @@
 class Api::V1::AddonsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    addon = Addon.create(addon_params)
 	    render json: addon

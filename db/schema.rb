@@ -272,6 +272,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.date "date_of_birth"
     t.string "password_digest"
     t.string "type"
+    t.string "token"
     t.boolean "premier", default: false
     t.boolean "call_verified", default: false
     t.boolean "blacklisted", default: false

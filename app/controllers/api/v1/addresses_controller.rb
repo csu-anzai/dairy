@@ -1,5 +1,5 @@
 class Api::V1::AddressesController < ApplicationController
-
+	before_action :authorize_request
 	before_action :set_address, only: [:show, :edit, :update, :destroy]
 
 	def create

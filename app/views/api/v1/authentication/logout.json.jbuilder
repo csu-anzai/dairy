@@ -1,0 +1,1 @@
+json.message "#{@current_user.name}, logged out successfully"

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     namespace :v1 do 
      resources :users, param: :_username
      post '/auth/login', to: 'authentication#login'
+     post '/auth/logout', to: 'authentication#logout'
+     post '/auth/change_password', to: 'authentication#change_password'
      resources :item_categories, only: [:create, :index, :show, :update, :destroy]
      resources :item_attributes, only: [:create, :index, :show, :update, :destroy]
      resources :attribute_choices, only: [:create, :index, :show, :update, :destroy]
