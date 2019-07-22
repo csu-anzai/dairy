@@ -1,5 +1,6 @@
 class Api::V1::SubscriptionsController < ApplicationController
 
+	before_action :authorize_request
 	before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
 	def create
@@ -8,7 +9,8 @@ class Api::V1::SubscriptionsController < ApplicationController
 	end
 
 	def index
-		@subscriptions = Subscription.all
+		# @subscriptions = Subscription.all
+		@subscriptions = @current_user.subscriptions
 	end
 
 	def show
