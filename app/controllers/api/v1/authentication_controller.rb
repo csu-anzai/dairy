@@ -38,6 +38,12 @@ class Api::V1::AuthenticationController < ApplicationController
     
   end
 
+  def forgot_password
+    # byebug
+    user_name = params[:auth][:username].strip
+    User.where(username: user_name)
+  end
+
   private
 
   def login_params
