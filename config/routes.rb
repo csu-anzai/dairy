@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :api do 
+
+  namespace :api, defaults: {format: 'json'} do 
     namespace :v1 do 
+     resources :users, param: :_username
+     post '/auth/login', to: 'authentication#login'
      resources :item_categories, only: [:create, :index, :show, :update, :destroy]
      resources :item_attributes, only: [:create, :index, :show, :update, :destroy]
      resources :attribute_choices, only: [:create, :index, :show, :update, :destroy]
@@ -24,4 +27,5 @@ Rails.application.routes.draw do
      resources :deliveries, only: [:create, :index, :show, :update, :destroy]
     end 
   end 
+  get '/*a', to: 'application#not_found'
 end
