@@ -11,6 +11,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string   :password_digest
       t.string   :type
       t.string   :token
+      t.string   :otp
+      t.datetime :otp_sent_at
       t.boolean  :premier, default: false
       t.boolean  :call_verified, default: false
       t.boolean  :blacklisted, default: false
