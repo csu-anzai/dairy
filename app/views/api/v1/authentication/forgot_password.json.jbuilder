@@ -1,0 +1,1 @@
+json.message "Check your email to reset password"

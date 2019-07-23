@@ -10,6 +10,7 @@ Rails.application.routes.draw do
      post '/auth/login', to: 'authentication#login'
      post '/auth/logout', to: 'authentication#logout'
      post '/auth/change_password', to: 'authentication#change_password'
+     post '/auth/forgot_password', to: 'authentication#forgot_password'
      resources :item_categories, only: [:create, :index, :show, :update, :destroy]
      resources :item_attributes, only: [:create, :index, :show, :update, :destroy]
      resources :attribute_choices, only: [:create, :index, :show, :update, :destroy]
