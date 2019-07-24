@@ -1,5 +1,7 @@
 class Api::V1::UnitsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    unit = Unit.create(attr_choice_params)
 	    render json: unit

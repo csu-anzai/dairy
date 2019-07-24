@@ -1,5 +1,7 @@
 class Api::V1::StocksController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    stock = Stock.create(stock_params)
 	    render json: stock

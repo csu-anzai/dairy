@@ -36,7 +36,7 @@ class Api::V1::AuthenticationController < ApplicationController
       if params[:auth][:otp] == params[:auth][:otp].upcase # OTP must be in uper case.
         @current_user = User.find_by(otp: params[:auth][:otp])
         if @current_user
-          if (Time.current - @current_user.otp_sent_at < 900 ) # token expire after 15 minutes.
+          if (Time.current - @current_user.otp_sent_at <= 900 ) # token expire after 15 minutes.
             if @current_user.otp == params[:auth][:otp]
               match_password(params[:auth][:password].strip, params[:auth][:password_confirmation].strip)
             else

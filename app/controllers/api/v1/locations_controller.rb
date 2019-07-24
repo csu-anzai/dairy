@@ -1,5 +1,7 @@
 class Api::V1::LocationsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    location = Location.create(location_params)
 	    render json: location

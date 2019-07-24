@@ -1,6 +1,8 @@
 class Api::V1::UsersController < ApplicationController
-    before_action :authorize_request, except: :create
+    
+    before_action :authorize_request, except: %i[create]
     before_action :find_user, except: %i[create index]
+
 	def create
 	    @user = User.new(user_params)
 	    if @user.save

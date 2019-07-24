@@ -1,5 +1,7 @@
 class Api::V1::ItemVariantsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    item_variant = ItemVariant.create(item_params)
 	    render json: item_variant

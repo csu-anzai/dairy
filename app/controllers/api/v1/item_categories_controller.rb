@@ -1,5 +1,6 @@
 class Api::V1::ItemCategoriesController < ApplicationController
 
+	before_action :authorize_request
 	before_action :set_category, only: [:show, :edit, :update, :destroy]
 
 	def create

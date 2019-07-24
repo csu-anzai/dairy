@@ -1,5 +1,7 @@
 class Api::V1::DeliveriesController < ApplicationController
 
+	before_action :authorize_request
+
 	def create
 	    delivery = Delivery.create(delivery_params)
 	    render json: delivery
