@@ -31,16 +31,30 @@ class Api::V1::AuthenticationController < ApplicationController
   end
 
   def reset_password
-    @current_user = User.find_by(otp: params[:auth][:otp])
-    if @current_user
-      if @current_user.otp == params[:auth][:otp]
-        match_password(params[:auth][:password].strip, params[:auth][:password_confirmation].strip)
+      
+    if params[:auth][:otp].size == 6
+      if params[:auth][:otp] == params[:auth][:otp].upcase # OTP must be in uper case.
+        @current_user = User.find_by(otp: params[:auth][:otp])
+        if @current_user
+          if (Time.current - @current_user.otp_sent_at < 900 ) # token expire after 15 minutes.
+            if @current_user.otp == params[:auth][:otp]
+              match_password(params[:auth][:password].strip, params[:auth][:password_confirmation].strip)
+            else
+              render json: { error: "OTP mismatched."}, status: :unprcessable_entity
+            end
+          else
+              render json: { error: "OTP expired."}, status: :unprcessable_entity
+          end
+        else
+          render json: {error: "Unauthorize user."}, status: :unauthorized
+        end
       else
-        render json: { error: "OTP mismatched."}, status: :unprcessable_entity
+        render json: { error: "OTP is case sensitive."}, status: :unprcessable_entity
       end
     else
-      render json: {error: "Unauthorize user."}, status: :unauthorized
+      render json: { error: "Invalid OTP."}, status: :unprcessable_entity
     end
+
   end
 
   def forgot_password
@@ -59,7 +73,6 @@ class Api::V1::AuthenticationController < ApplicationController
 
   def match_password(password, password_confirm)
     if password == password_confirm
-      byebug
       @current_user.update(password: password, password_confirmation: password_confirm)
     else
       render json: { error: "Password mismatched!" }, status: :unprcessable_entity
