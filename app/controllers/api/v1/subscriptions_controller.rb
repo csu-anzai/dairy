@@ -9,7 +9,6 @@ class Api::V1::SubscriptionsController < ApplicationController
 	end
 
 	def index
-		# @subscriptions = Subscription.all
 		@subscriptions = @current_user.subscriptions
 	end
 
