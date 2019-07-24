@@ -8,7 +8,7 @@ class Api::V1::AddressesController < ApplicationController
 	end
 
 	def index
-		@address = Address.all
+		@address = @current_user.addresses
 	end
 
 	def show
