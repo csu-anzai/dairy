@@ -1,5 +1,7 @@
 class Api::V1::CustomersController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    customer = Customer.create(customer_params)
 	    render json: customer

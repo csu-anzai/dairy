@@ -1,5 +1,7 @@
 class Api::V1::AttributeChoicesController < ApplicationController
 
+	before_action :authorize_request
+
 	def create
 	    attribute_choice = AttributeChoice.create(attr_choice_params)
 	    render json: attribute_choice

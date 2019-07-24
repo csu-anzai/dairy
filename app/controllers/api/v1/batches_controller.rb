@@ -1,5 +1,7 @@
 class Api::V1::BatchesController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    batch = Batch.create(batch_params)
 	    render json: batch

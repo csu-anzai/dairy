@@ -1,5 +1,7 @@
 class Api::V1::ItemsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    item = Item.create(item_params)
 	    render json: item

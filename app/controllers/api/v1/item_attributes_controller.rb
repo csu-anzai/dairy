@@ -1,5 +1,6 @@
 class Api::V1::ItemAttributesController < ApplicationController
 
+	before_action :authorize_request
 	before_action :set_attribute, only: [:show, :edit, :update, :destroy]
 
 	def create

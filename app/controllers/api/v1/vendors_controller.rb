@@ -1,5 +1,7 @@
 class Api::V1::VendorsController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    vendor = Vendor.create(vendor_params)
 	    render json: vendor

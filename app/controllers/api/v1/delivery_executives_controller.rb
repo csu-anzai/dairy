@@ -1,5 +1,7 @@
 class Api::V1::DeliveryExecutivesController < ApplicationController
 
+	before_action :authorize_request
+	
 	def create
 	    del_exec = DeliveryExecutive.create(del_executive_params)
 	    render json: del_exec
