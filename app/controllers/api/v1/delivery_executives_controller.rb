@@ -3,8 +3,8 @@ class Api::V1::DeliveryExecutivesController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    del_exec = DeliveryExecutive.create(del_executive_params)
-	    render json: del_exec
+    del_exec = DeliveryExecutive.create(del_executive_params)
+    render json: del_exec
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::DeliveryExecutivesController < ApplicationController
 
 	def update
 		del_exec = DeliveryExecutive.find(params[:id])
-	    del_exec.update_attributes(del_executive_params)
-	    render json: del_exec
+    del_exec.update_attributes(del_executive_params)
+    render json: del_exec
 	end
 
 	def destroy

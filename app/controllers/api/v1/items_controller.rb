@@ -3,8 +3,8 @@ class Api::V1::ItemsController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    item = Item.create(item_params)
-	    render json: item
+    item = Item.create(item_params)
+    render json: item
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::ItemsController < ApplicationController
 
 	def update
 		item = Item.find(params[:id])
-	    item.update_attributes(item_params)
-	    render json: item
+    item.update_attributes(item_params)
+    render json: item
 	end
 
 	def destroy

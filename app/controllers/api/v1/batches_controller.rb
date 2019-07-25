@@ -3,8 +3,8 @@ class Api::V1::BatchesController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    batch = Batch.create(batch_params)
-	    render json: batch
+    batch = Batch.create(batch_params)
+    render json: batch
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::BatchesController < ApplicationController
 
 	def update
 		batch = Batch.find(params[:id])
-	    batch.update_attributes(batch_params)
-	    render json: batch
+    batch.update_attributes(batch_params)
+    render json: batch
 	end
 
 	def destroy

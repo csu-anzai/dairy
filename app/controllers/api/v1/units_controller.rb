@@ -3,8 +3,8 @@ class Api::V1::UnitsController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    unit = Unit.create(attr_choice_params)
-	    render json: unit
+    unit = Unit.create(attr_choice_params)
+    render json: unit
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::UnitsController < ApplicationController
 
 	def update
 		unit = Unit.find(params[:id])
-	    unit.update_attributes(attr_choice_params)
-	    render json: unit
+    unit.update_attributes(attr_choice_params)
+    render json: unit
 	end
 
 	def destroy

@@ -1,1 +1,1 @@
-json.(@add_on, :id, :subscription_id, :title, :quantity, :unit_id, :start_date, :end_date, :remarks, :status, :created_by, :updated_by)
+json.(@customer, :salutation, :name, :gender, :username, :email, :mobile, :date_of_birth, :type, :premier, :call_verified, :blacklisted, :active, :created_by, :updated_by)

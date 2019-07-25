@@ -3,8 +3,8 @@ class Api::V1::StocksController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    stock = Stock.create(stock_params)
-	    render json: stock
+    stock = Stock.create(stock_params)
+    render json: stock
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::StocksController < ApplicationController
 
 	def update
 		stock = Stock.find(params[:id])
-	    stock.update_attributes(stock_params)
-	    render json: stock
+    stock.update_attributes(stock_params)
+    render json: stock
 	end
 
 	def destroy
