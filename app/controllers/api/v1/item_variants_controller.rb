@@ -3,8 +3,8 @@ class Api::V1::ItemVariantsController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    item_variant = ItemVariant.create(item_params)
-	    render json: item_variant
+    item_variant = ItemVariant.create(item_params)
+    render json: item_variant
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::ItemVariantsController < ApplicationController
 
 	def update
 		item_variant = ItemVariant.find(params[:id])
-	    item_variant.update_attributes(item_params)
-	    render json: item_variant
+    item_variant.update_attributes(item_params)
+    render json: item_variant
 	end
 
 	def destroy

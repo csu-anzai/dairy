@@ -4,8 +4,8 @@ class Api::V1::SubscriptionsController < ApplicationController
 	before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
 	def create
-	    @subscription = Subscription.create(subscription_params)
-	    render json: {error: @subscription.errors}, status: :unprcessable_entity unless @subscription.valid?
+    @subscription = Subscription.create(subscription_params)
+    render json: {error: @subscription.errors}, status: :unprcessable_entity unless @subscription.valid?
 	end
 
 	def index
@@ -17,20 +17,20 @@ class Api::V1::SubscriptionsController < ApplicationController
 	end
 
 	def update
-	    @subscription.update(subscription_params)
-	    render json: { error: @subscription.error }, status: :unprocessable_entity unless @subscription.valid?
+    @subscription.update(subscription_params)
+    render json: { error: @subscription.error }, status: :unprocessable_entity unless @subscription.valid?
 	end
 
 	def destroy
 		@subscription.destroy
-  		render json: { errors: @subscription.errors }, status: :unprocessable_entity unless @subscription
+  	render json: { errors: @subscription.errors }, status: :unprocessable_entity unless @subscription
 	end
 
 	private
 
 	def set_subscription
 		@subscription = Subscription.find_by_id(params[:id])
-	    render json: {errors: {subscription: 'not found'} }, status: :not_found unless @subscription
+	  render json: {errors: {subscription: 'not found'} }, status: :not_found unless @subscription
 	end
 
 	def subscription_params

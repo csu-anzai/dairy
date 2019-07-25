@@ -3,8 +3,8 @@ class Api::V1::VendorsController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    vendor = Vendor.create(vendor_params)
-	    render json: vendor
+    vendor = Vendor.create(vendor_params)
+    render json: vendor
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::VendorsController < ApplicationController
 
 	def update
 		vendor = Vendor.find(params[:id])
-	    vendor.update_attributes(vendor_params)
-	    render json: vendor
+    vendor.update_attributes(vendor_params)
+    render json: vendor
 	end
 
 	def destroy

@@ -3,8 +3,8 @@ class Api::V1::LocationsController < ApplicationController
 	before_action :authorize_request
 	
 	def create
-	    location = Location.create(location_params)
-	    render json: location
+    location = Location.create(location_params)
+    render json: location
 	end
 
 	def index
@@ -16,8 +16,8 @@ class Api::V1::LocationsController < ApplicationController
 
 	def update
 		location = Location.find(params[:id])
-	    location.update_attributes(location_params)
-	    render json: location
+    location.update_attributes(location_params)
+    render json: location
 	end
 
 	def destroy

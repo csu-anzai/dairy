@@ -4,13 +4,12 @@ class Api::V1::UsersController < ApplicationController
     before_action :find_user, except: %i[create index]
 
 	def create
-	    @user = User.new(user_params)
-	    if @user.save
-	      render json: @user, status: :created
-	    else
-	      render json: { errors: @user.errors.full_messages },
-	             status: :unprocessable_entity
-	    end
+    @user = User.new(user_params)
+    if @user.save
+      render json: @user, status: :created
+    else
+      render json: { errors: @user.errors.full_messages },status: :unprocessable_entity
+    end
 	end
 
 	def index
@@ -23,9 +22,8 @@ class Api::V1::UsersController < ApplicationController
 
 	def update
 		unless @user.update(user_params)
-	      render json: { errors: @user.errors.full_messages },
-	             status: :unprocessable_entity
-	    end
+	    render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+	  end
 	end
 
 	def destroy
@@ -35,9 +33,9 @@ class Api::V1::UsersController < ApplicationController
 	private
 
 	def find_user
-      @user = User.find_by_username!(params[:_username])
-  	  rescue ActiveRecord::RecordNotFound
-      render json: { errors: 'Not found' }, status: :not_found
+    @user = User.find_by_username!(params[:_username])
+	  rescue ActiveRecord::RecordNotFound
+    render json: { errors: 'Not found' }, status: :not_found
 	end
 
 	def user_params

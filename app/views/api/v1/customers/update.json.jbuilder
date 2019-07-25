@@ -1,14 +1,16 @@
 json.message 'Updated successfully'
-json.add_on do 
-	json.id @add_on.id
-	json.subscription_id @add_on.subscription_id
-	json.unit_id @add_on.unit_id
-	json.title @add_on.title
-	json.quantity @add_on.quantity
-	json.start_date @add_on.start_date
-	json.end_date @add_on.end_date
-	json.remarks @add_on.remarks
-	json.status @add_on.status
-	json.created_at @add_on.created_at
-	json.updated_at @add_on.updated_at
+json.customer do 
+	json.id @customer.id
+	json.salutation @customer.salutation
+	json.name @customer.name
+	json.gender @customer.gender
+	json.username @customer.username
+	json.email @customer.email
+	json.mobile @customer.mobile
+	json.date_of_birth @customer.date_of_birth
+	json.premier @customer.premier
+	json.call_verified @customer.call_verified
+	json.active @customer.active
+	json.created_at @customer.created_at
+	json.updated_at @customer.updated_at
 end 

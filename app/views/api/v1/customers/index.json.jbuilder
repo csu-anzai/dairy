@@ -1,15 +1,17 @@
-json.add_ons do
-	json.array! @add_ons do |addon|
-	  json.id addon.id
-	  json.title addon.title
-	  json.subscription_id addon.subscription_id
-	  json.unit_id addon.unit_id
-	  json.quantity addon.quantity
-	  json.start_date addon.start_date
-	  json.end_date addon.end_date
-	  json.remarks addon.remarks
-	  json.status addon.status
-	  json.created_at addon.created_at
-	  json.updated_at addon.updated_at
+json.customers do
+	json.array! @customers do |cust|
+	  json.id cust.id
+	  json.salutation cust.salutation
+	  json.name cust.name
+	  json.gender cust.gender
+	  json.username cust.username
+	  json.email cust.email
+	  json.mobile cust.mobile
+	  json.date_of_birth cust.date_of_birth
+	  json.premier cust.premier
+	  json.call_verified cust.call_verified
+	  json.active cust.active
+	  json.created_at cust.created_at
+	  json.updated_at cust.updated_at
 	end
 end
