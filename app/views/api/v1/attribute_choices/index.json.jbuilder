@@ -1,15 +1,12 @@
-json.add_ons do
-	json.array! @add_ons do |addon|
-	  json.id addon.id
-	  json.title addon.title
-	  json.subscription_id addon.subscription_id
-	  json.unit_id addon.unit_id
-	  json.quantity addon.quantity
-	  json.start_date addon.start_date
-	  json.end_date addon.end_date
-	  json.remarks addon.remarks
-	  json.status addon.status
-	  json.created_at addon.created_at
-	  json.updated_at addon.updated_at
+json.attribute_choices do
+	json.array! @attribute_choices do |attr_chc|
+	  json.id attr_chc.id
+	  json.item_attribute_id attr_chc.item_attribute_id
+	  json.name attr_chc.name
+	  json.active attr_chc.active
+	  json.created_by attr_chc.created_by
+	  json.updated_by attr_chc.updated_by
+	  json.created_at attr_chc.created_at
+	  json.updated_at attr_chc.updated_at
 	end
 end
