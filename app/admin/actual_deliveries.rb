@@ -11,7 +11,7 @@ ActiveAdmin.register ActualDelivery do
       f.input :unit, as: :select, :prompt => "⚖️ Select Unit", collection: Unit.all.collect {|u| [u.name, u.id] }
       f.input :amount
       f.input :remarks
-      f.input :status, as: :select, :prompt => "✔ Select Status", :collection => STATUS
+      f.input :status, as: :select, :prompt => "✔ Select Status", :collection => DELIVERY_STATUS
       f.input :created_by, :input_html => { :value => current_admin_user.id }, as: :hidden
       f.input :updated_by, :input_html => { :value => current_admin_user.id }, as: :hidden
     end

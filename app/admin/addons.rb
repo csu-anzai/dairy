@@ -19,7 +19,7 @@ ActiveAdmin.register Addon do
       f.input :start_date
       f.input :end_date
       f.input :remarks
-      f.input :status, as: :select, :prompt => "✔ Select Status", :collection => STATUS
+      f.input :status, as: :select, :prompt => "✔ Select Status", :collection => ADD_ON_STATUS
       f.input :created_by, :input_html => { :value => current_admin_user.id }, as: :hidden
       f.input :updated_by, :input_html => { :value => current_admin_user.id }, as: :hidden
     end
