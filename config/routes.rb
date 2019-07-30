@@ -28,7 +28,7 @@ Rails.application.routes.draw do
      resources :stocks, only: [:create, :index, :show, :update, :destroy]
      resources :subscriptions, only: [:create, :index, :show, :update, :destroy]
      resources :addons, only: [:create, :index, :show, :update, :destroy]
-     resources :deliveries, only: [:create, :index, :show, :update, :destroy]
+     resources :actual_deliveries, only: [:create, :index, :show, :update, :destroy]
     end 
   end 
   get '/*a', to: 'application#not_found'

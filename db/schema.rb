@@ -26,6 +26,25 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "actual_deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "address_id"
+    t.bigint "subscription_id"
+    t.bigint "delivery_executive_id"
+    t.decimal "quantity", precision: 9, scale: 3, default: "0.0"
+    t.bigint "unit_id"
+    t.decimal "amount", precision: 9, scale: 2, default: "0.0"
+    t.text "remarks"
+    t.string "status", default: "delivered"
+    t.bigint "created_by"
+    t.bigint "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_actual_deliveries_on_address_id"
+    t.index ["delivery_executive_id"], name: "index_actual_deliveries_on_delivery_executive_id"
+    t.index ["subscription_id"], name: "index_actual_deliveries_on_subscription_id"
+    t.index ["unit_id"], name: "index_actual_deliveries_on_unit_id"
+  end
+
   create_table "addons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subscription_id"
     t.bigint "unit_id"
@@ -120,21 +139,6 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.datetime "updated_at", null: false
     t.index ["item_variant_id"], name: "index_batches_on_item_variant_id"
     t.index ["user_id"], name: "index_batches_on_user_id"
-  end
-
-  create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "address_id"
-    t.bigint "subscription_id"
-    t.bigint "delivery_executive_id"
-    t.text "remarks"
-    t.string "status", default: "pending"
-    t.bigint "created_by"
-    t.bigint "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_deliveries_on_address_id"
-    t.index ["delivery_executive_id"], name: "index_deliveries_on_delivery_executive_id"
-    t.index ["subscription_id"], name: "index_deliveries_on_subscription_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
