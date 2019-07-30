@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+  get 'admin/subscriptions/daily_delivery_report', 'admin/subscriptions#daily_delivery_report'
   ActiveAdmin.routes(self)
   root to: 'home#index'
 
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
      resources :stocks, only: [:create, :index, :show, :update, :destroy]
      resources :subscriptions, only: [:create, :index, :show, :update, :destroy]
      resources :addons, only: [:create, :index, :show, :update, :destroy]
-     resources :deliveries, only: [:create, :index, :show, :update, :destroy]
+     resources :actual_deliveries, only: [:create, :index, :show, :update, :destroy]
     end 
   end 
   get '/*a', to: 'application#not_found'

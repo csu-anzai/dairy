@@ -6,7 +6,7 @@ class Address < ApplicationRecord
   has_one :vendor, through: :location
   has_one :delivery_executive, through: :location
   has_many :subscriptions, inverse_of: :address, dependent: :destroy
-  has_many :deliveries, inverse_of: :address, dependent: :destroy
+  has_many :actual_deliveries, inverse_of: :address, dependent: :destroy
 
   # Validations
   validates :address1, length: {minimum: 5, maximum: 180, message: "must have 5 - 180 characters!"}, presence: true

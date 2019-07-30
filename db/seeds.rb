@@ -35,13 +35,13 @@ d_exe_add = Address.create(address1: 'H.No- 051, Sect-1, Near- Metro station', a
 
 location1 = vnd1.locations.create(name: 'first route', start_point: 'abc first point', end_point: 'xyz last point', delivery_executive: d_exe1, description: "This is a demo location")
 
-s1 = cst_add.subscriptions.create(item_variant: i_v, title: "First subscription", quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
-add_on1 = s1.create_active_addon(start_date: Date.today + 1.day, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
+subs = cst_add.subscriptions.create(item_variant: i_v, title: "First subscription", quantity: 10, unit: u1, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
+add_on1 = subs.create_active_addon(start_date: Date.today + 1.day, end_date: Date.today + 7.days, status: 'active', quantity: 1, unit: u1)
 
 vnd_bt = i_v.batches.create(vendor: vnd1, code: 'VN103', manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
 sup_bt = i_v.batches.create(vendor: sup1, code: 'SLY101', manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)
 
 stock = vnd_bt.create_stock(quantity: 100, unit: u1)
-
+actual_delivery = ActualDelivery.create!(address_id: cst_add.id, subscription_id: subs.id, delivery_executive_id: d_exe1.id, unit_id: u2.id, quantity: 2.250, amount: 250.50, remarks: nil, status: "delivered")
 # Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

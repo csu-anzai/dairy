@@ -2,6 +2,7 @@ class Unit < ApplicationRecord
   # Associations
   has_many :subscriptions, inverse_of: :unit, dependent: :destroy
   has_many :addons, inverse_of: :unit, dependent: :destroy
+  has_many :actual_deliveries, inverse_of: :unit, dependent: :destroy
   has_many :stocks, inverse_of: :unit, dependent: :destroy
 
   # Validations
