@@ -2,6 +2,10 @@ ActiveAdmin.register ActualDelivery do
 
   permit_params :address_id, :subscription_id, :delivery_executive_id, :unit_id, :quantity, :amount, :remarks, :status, :created_by, :updated_by
 
+  action_item :daily_deliveries, only: :index do
+    link_to 'Daily Delivery Report', admin_actual_deliveries_daily_delivery_report_path
+  end
+
   form do |f|
     f.inputs do
       f.input :address, as: :select, :prompt => "🏠 Select Address", collection: Address.all.collect {|add| [(['( ☻',add.addressable.name, ', ☎ ', add.addressable.mobile, ' ) @ '].join('') + add.address1), add.id] }
@@ -16,6 +20,29 @@ ActiveAdmin.register ActualDelivery do
       f.input :updated_by, :input_html => { :value => current_admin_user.id }, as: :hidden
     end
     f.actions
+  end
+
+  controller do
+    def daily_delivery_report
+      array = []
+      Subscription.active.each_with_index do |subs, index|
+        array << {
+          Index: index + 1,
+          Full_address: subs.address.address1 + subs.address.address2,
+          Receiver_name: subs.address.receiver_name,
+          Receiver_mobile: subs.address.receiver_mobile,
+          Title: subs.title,
+          Variant: subs.item_variant.title,
+          Quantity: subs.quantity,
+          Unit: subs.unit.code,
+          Frequency: (subs.frequency == 0) ? "Daily" : (subs.frequency == 1) ? "Once" : (subs.frequency == 2) ? "Alternative Days" : "Weekly",
+          Period: subs.start_date.strftime("%d %b %Y") + " To " + subs.end_date.strftime("%d %b %Y"),
+          Remarks: subs.remarks,
+          Is_delivered: ''
+        }
+      end
+      send_data ActualDelivery.to_csv(array), filename: "Delivery-Report-#{Date.current}.csv", type: 'text/csv', disposition: 'attachment'
+    end
   end
   
 end

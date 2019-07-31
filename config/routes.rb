@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  get 'admin/subscriptions/daily_delivery_report', 'admin/subscriptions#daily_delivery_report'
+  get 'admin/actual_deliveries/daily_delivery_report', 'admin/actual_deliveries#daily_delivery_report'
   ActiveAdmin.routes(self)
   root to: 'home#index'
 
