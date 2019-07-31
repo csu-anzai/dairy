@@ -30,19 +30,24 @@ ActiveAdmin.register Subscription do
 
   controller do
     def daily_delivery_report
-      # array = []
-      # Subscription.active.each_with_index do |subs, index|
-      #   array << {
-      #     index: index + 1,
-      #     variant: subs.item_variant_id,
-      #     title: subs.title,
-      #     quantity: subs.quantity,
-      #     unit: subs.unit_id,
-      #     remarks: subs.remarks
-      #   }
-      # end
-      @subscriptions = Subscription.active
-      send_data @subscriptions.to_csv, filename: "Delivery-Report-#{Date.current}.csv"
+      array = []
+      Subscription.active.each_with_index do |subs, index|
+        array << {
+          Index: index + 1,
+          Full_address: subs.address.address1 + subs.address.address2,
+          Receiver_name: subs.address.receiver_name,
+          Receiver_mobile: subs.address.receiver_mobile,
+          Title: subs.title,
+          Variant: subs.item_variant.title,
+          Quantity: subs.quantity,
+          Unit: subs.unit.code,
+          Frequency: (subs.frequency == 0) ? "Daily" : (subs.frequency == 1) ? "Once" : (subs.frequency == 2) ? "Alternative Days" : "Weekly",
+          Period: subs.start_date.strftime("%d %b %Y") + " To " + subs.end_date.strftime("%d %b %Y"),
+          Remarks: subs.remarks,
+          Is_delivered: ''
+        }
+      end
+      send_data Subscription.to_csv(array), filename: "Delivery-Report-#{Date.current}.csv", type: 'text/csv', disposition: 'attachment'
     end
   end  
 end

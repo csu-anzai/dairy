@@ -25,24 +25,15 @@ class Subscription < ApplicationRecord
   validates :end_date, presence: true, date: { after_or_equal_to:  :start_date, message: "must be after the start date!" }
   validates :remarks, allow_blank: true, length: {maximum: 1500, message: "must be less than 1500 characters!" }
 
-  def self.to_csv
-    # header = array.first.keys
-    # values = array.collect(&:values)  
-    # arr = [array, *values]
+  def self.to_csv(array)
+    columns = %i[Index Full_address Receiver_name Receiver_mobile Title Variant Quantity Unit Frequency Period Remarks Is_delivered]
 
-    # CSV.generate(headers: true) do |csv|
-    #   arr.each do |sub|
-    #     csv << arr
-    #   end
-    # end
-
-    attr_accessor :title, :amount, :remarks
     CSV.generate do |csv|
-      # csv << title
-      all.each do |subs|
-        # byebug
-        csv << subs.quantity
+      csv << columns
+      array.each do |subs|
+        csv << subs.fetch_values(*columns)
       end
     end
   end
+
 end
