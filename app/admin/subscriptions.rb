@@ -4,10 +4,6 @@ ActiveAdmin.register Subscription do
 
   permit_params :address_id, :item_variant_id, :unit_id, :title, :quantity, :frequency, :start_date, :end_date, :remarks, :call_verified, :status, :created_by, :updated_by
 
-  action_item :daily_deliveries, only: :index do
-    link_to 'Daily Delivery Report', admin_subscriptions_daily_delivery_report_path
-  end
-
   form do |f|
     f.inputs do
       f.input :address_id, as: :select, :prompt => "☻Ⓒ Select Customer & Address", 
@@ -27,27 +23,5 @@ ActiveAdmin.register Subscription do
     end
     f.actions
   end
-
-  controller do
-    def daily_delivery_report
-      array = []
-      Subscription.active.each_with_index do |subs, index|
-        array << {
-          Index: index + 1,
-          Full_address: subs.address.address1 + subs.address.address2,
-          Receiver_name: subs.address.receiver_name,
-          Receiver_mobile: subs.address.receiver_mobile,
-          Title: subs.title,
-          Variant: subs.item_variant.title,
-          Quantity: subs.quantity,
-          Unit: subs.unit.code,
-          Frequency: (subs.frequency == 0) ? "Daily" : (subs.frequency == 1) ? "Once" : (subs.frequency == 2) ? "Alternative Days" : "Weekly",
-          Period: subs.start_date.strftime("%d %b %Y") + " To " + subs.end_date.strftime("%d %b %Y"),
-          Remarks: subs.remarks,
-          Is_delivered: ''
-        }
-      end
-      send_data Subscription.to_csv(array), filename: "Delivery-Report-#{Date.current}.csv", type: 'text/csv', disposition: 'attachment'
-    end
-  end  
+  
 end

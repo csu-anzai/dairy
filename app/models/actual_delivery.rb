@@ -8,4 +8,17 @@ class ActualDelivery < ApplicationRecord
 
   # Validations
   validates :remarks, allow_blank: true, length: {maximum: 1500}
+
+  # csv generator
+  def self.to_csv(array)
+    columns = %i[Index Full_address Receiver_name Receiver_mobile Title Variant Quantity Unit Frequency Period Remarks Is_delivered]
+
+    CSV.generate do |csv|
+      csv << columns
+      array.each do |subs|
+        csv << subs.fetch_values(*columns)
+      end
+    end
+  end
+
 end
