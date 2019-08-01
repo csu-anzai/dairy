@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_084911) do
+ActiveRecord::Schema.define(version: 2019_08_01_111915) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -220,6 +220,19 @@ ActiveRecord::Schema.define(version: 2019_07_16_084911) do
     t.datetime "updated_at", null: false
     t.index ["delivery_executive_id"], name: "index_locations_on_delivery_executive_id"
     t.index ["vendor_id"], name: "index_locations_on_vendor_id"
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "subscription_id"
+    t.decimal "amount", precision: 9, scale: 2
+    t.string "mode", default: "cash"
+    t.string "paid_by"
+    t.text "remarks"
+    t.bigint "created_by"
+    t.bigint "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_payments_on_subscription_id"
   end
 
   create_table "stocks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

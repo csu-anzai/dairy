@@ -1,5 +1,6 @@
 ActiveAdmin.register ActualDelivery do
 
+  menu priority: 2, label: proc { I18n.t("admin.delivery.label") }, parent: 'Accounts'
   permit_params :address_id, :subscription_id, :delivery_executive_id, :unit_id, :quantity, :amount, :remarks, :status, :created_by, :updated_by
 
   action_item :daily_deliveries, only: :index do
@@ -26,10 +27,10 @@ ActiveAdmin.register ActualDelivery do
     def daily_delivery_report
       array = []
       Subscription.active.each_with_index do |subs, index|
-        if subs.active_addon.present?
-          addon_qty = subs.active_addon.quantity
-          addon_title = subs.active_addon.title
-        end
+
+        addon_qty = subs.active_addon ? subs.active_addon.quantity : 0.0
+        addon_title = subs.active_addon ? subs.active_addon.title : nil
+        total_quantity = subs.quantity + addon_qty
         array << {
           Index: index + 1,
           Full_address: subs.address.address1 + subs.address.address2,
@@ -37,12 +38,13 @@ ActiveAdmin.register ActualDelivery do
           Receiver_mobile: subs.address.receiver_mobile,
           Title: subs.title,
           Variant: subs.item_variant.title,
-          Quantity: subs.quantity + addon_qty,
+          Quantity: total_quantity,
           Unit: subs.unit.code,
-          Frequency: (subs.frequency == 0) ? "Daily" : (subs.frequency == 1) ? "Once" : (subs.frequency == 2) ? "Alternative Days" : "Weekly",
-          Period: subs.start_date.strftime("%d %b %Y") + " To " + subs.end_date.strftime("%d %b %Y"),
+          # Frequency: (subs.frequency == 0) ? "Daily" : (subs.frequency == 1) ? "Once" : (subs.frequency == 2) ? "Alternative Days" : "Weekly",
+          # Period: subs.start_date.strftime("%d %b %Y") + " To " + subs.end_date.strftime("%d %b %Y"),
           Remarks: subs.remarks,
-          Add_details: "#{addon_qty} Ltr. required as #{addon_title}.",
+          Addon_details: subs.active_addon ? "#{addon_qty} Ltr. required as #{addon_title}." : "Nil",
+          Payment: total_quantity*45,
           Is_delivered: ''
         }
       end
