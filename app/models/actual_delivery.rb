@@ -11,7 +11,7 @@ class ActualDelivery < ApplicationRecord
 
   # csv generator
   def self.to_csv(array)
-    columns = %i[Index Full_address Receiver_name Receiver_mobile Title Variant Quantity Unit Frequency Period Remarks Add_details Is_delivered]
+    columns = %i[Index Full_address Receiver_name Receiver_mobile Title Variant Quantity Unit Remarks Addon_details Payment Is_delivered]
 
     CSV.generate do |csv|
       csv << columns

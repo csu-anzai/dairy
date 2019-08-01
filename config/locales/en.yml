@@ -48,7 +48,10 @@ en:
         label: "Users"
       address:
         label: "Addresses"
-
+    account:
+      label: "Payment"
+    delivery:
+      label: "Actual Deliveries"
   status:
       active: "Active"
       inactive: "Inactive"

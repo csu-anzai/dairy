@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscription: one
+  amount: 
+  amount: 
+  mode: MyString
+  paid_by: MyString
+  remarks: MyText
+
+two:
+  subscription: two
+  amount: 
+  amount: 
+  mode: MyString
+  paid_by: MyString
+  remarks: MyText
