@@ -1,0 +1,4 @@
+local:
+  service: Disk
+  root: '/home/deploy/gwalg/current/storage'
+
