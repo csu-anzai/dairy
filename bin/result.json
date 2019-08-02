@@ -1,0 +1,2697 @@
+{
+  "processes": {
+    "accountid": "",
+    "additionalInfo": [
+
+    ],
+    "machineIp": "10.101.74.73",
+    "machineName": "ashish",
+    "plugintype": "ruby",
+    "process": [
+      {
+        "PID": "30890",
+        "applicationid": "c87ee674-4ddc-3efe-a74e-dfe25da5d7b3",
+        "processIdentifier": "8803172e-1977-34b5-bf64-375d0d53523b",
+        "name": "",
+        "processName": "ruby",
+        "fullPath": "/home/sez27/workspace/dairy",
+        "params": "puma 3.12.1 (tcp://localhost:3000) [dairy]\n",
+        "applicationName": "",
+        "applicationType": "",
+        "applicationTypeDesc": "",
+        "canFetchCVEData": true,
+        "rubyVersion": "ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-linux]",
+        "listen": {
+          "ips": [
+            "127.0.0.1",
+            "0.0.0.0"
+          ],
+          "ports": [
+            "3000",
+            "55280",
+            "*"
+          ]
+        },
+        "establish": {
+          "ips": [
+
+          ],
+          "hostNames": [
+
+          ],
+          "ports": [
+
+          ],
+          "localIpAddresses": [
+
+          ],
+          "localPorts": [
+
+          ]
+        },
+        "closewait": {
+          "ips": [
+
+          ],
+          "hostNames": [
+
+          ],
+          "ports": [
+
+          ],
+          "localIpAddresses": [
+
+          ],
+          "localPorts": [
+
+          ]
+        },
+        "level": [
+          {
+            "entry": [
+              {
+                "key": "38b48659-46b8-3e6e-a9a8-b697c975b391",
+                "value": {
+                  "name": "20190627044130_create_stocks.rb",
+                  "type": "file",
+                  "identifier": "38b48659-46b8-3e6e-a9a8-b697c975b391",
+                  "timestamp": "2019-06-28 10:40:51 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627044130_create_stocks.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "0e8726d3-5e67-3247-8ee6-24b010350326",
+                          "value": {
+                            "name": "CreateStocks",
+                            "type": "class",
+                            "identifier": "0e8726d3-5e67-3247-8ee6-24b010350326",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "874d9002-b7b4-309d-af91-ba6fa4698bf1",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "874d9002-b7b4-309d-af91-ba6fa4698bf1",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "2c0d410b-ec18-33ed-b6e4-c87cf5fbf15f",
+                "value": {
+                  "name": "20190627032832_create_item_variants.rb",
+                  "type": "file",
+                  "identifier": "2c0d410b-ec18-33ed-b6e4-c87cf5fbf15f",
+                  "timestamp": "2019-06-27 09:49:23 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627032832_create_item_variants.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "5dc30e58-8097-33b5-a8aa-e618a1894886",
+                          "value": {
+                            "name": "CreateItemVariants",
+                            "type": "class",
+                            "identifier": "5dc30e58-8097-33b5-a8aa-e618a1894886",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "92548f1c-c06e-3d3a-afa5-aaa3dbe2d25e",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "92548f1c-c06e-3d3a-afa5-aaa3dbe2d25e",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "be127c8a-19ba-3c93-86fb-71efe6a585f8",
+                "value": {
+                  "name": "20190627033508_add_join_tables.rb",
+                  "type": "file",
+                  "identifier": "be127c8a-19ba-3c93-86fb-71efe6a585f8",
+                  "timestamp": "2019-06-27 10:02:45 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627033508_add_join_tables.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "a2da67d9-30df-347a-a059-d84e421ef860",
+                          "value": {
+                            "name": "AddJoinTables",
+                            "type": "class",
+                            "identifier": "a2da67d9-30df-347a-a059-d84e421ef860",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "9f154e0c-6f76-33b2-8972-dae1fc5107af",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "9f154e0c-6f76-33b2-8972-dae1fc5107af",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "07886d9f-e789-3993-9e30-279f64fc3556",
+                "value": {
+                  "name": "20190628041327_create_batches.rb",
+                  "type": "file",
+                  "identifier": "07886d9f-e789-3993-9e30-279f64fc3556",
+                  "timestamp": "2019-06-28 10:40:51 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190628041327_create_batches.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "e4fb7d22-ca4e-34a8-bacc-16c441460ffc",
+                          "value": {
+                            "name": "CreateBatches",
+                            "type": "class",
+                            "identifier": "e4fb7d22-ca4e-34a8-bacc-16c441460ffc",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "740238d6-cd57-3b7f-a081-28e39446a9bd",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "740238d6-cd57-3b7f-a081-28e39446a9bd",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "551f27e9-6d49-3b01-8fbb-3d736debb83f",
+                "value": {
+                  "name": "20190628031419_create_addons.rb",
+                  "type": "file",
+                  "identifier": "551f27e9-6d49-3b01-8fbb-3d736debb83f",
+                  "timestamp": "2019-06-28 08:44:28 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190628031419_create_addons.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "48ee791e-77a4-3c78-a7ab-8558ac6e725f",
+                          "value": {
+                            "name": "CreateAddons",
+                            "type": "class",
+                            "identifier": "48ee791e-77a4-3c78-a7ab-8558ac6e725f",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "50899118-ff0b-3243-9eb1-fe4b5e469bb5",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "50899118-ff0b-3243-9eb1-fe4b5e469bb5",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "5ee22249-4038-3655-a3f6-07dba7f90a88",
+                "value": {
+                  "name": "20190627030845_create_item_categories.rb",
+                  "type": "file",
+                  "identifier": "5ee22249-4038-3655-a3f6-07dba7f90a88",
+                  "timestamp": "2019-06-27 08:44:32 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627030845_create_item_categories.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "0f52beaf-0e9b-3195-a05e-d29b08dbd552",
+                          "value": {
+                            "name": "CreateItemCategories",
+                            "type": "class",
+                            "identifier": "0f52beaf-0e9b-3195-a05e-d29b08dbd552",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "38c73f26-082a-3948-8f0e-837ffcde9d98",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "38c73f26-082a-3948-8f0e-837ffcde9d98",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "afe3eb3e-6cbe-3e3c-90ea-4fd987681335",
+                "value": {
+                  "name": "20190627032823_create_items.rb",
+                  "type": "file",
+                  "identifier": "afe3eb3e-6cbe-3e3c-90ea-4fd987681335",
+                  "timestamp": "2019-06-27 09:50:21 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627032823_create_items.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "020421f9-8670-305d-951a-b96a0b75db17",
+                          "value": {
+                            "name": "CreateItems",
+                            "type": "class",
+                            "identifier": "020421f9-8670-305d-951a-b96a0b75db17",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "5923fb1a-be00-3e04-9ef4-0f74e26a5d8f",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "5923fb1a-be00-3e04-9ef4-0f74e26a5d8f",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "90af58b5-086a-3f18-b8ae-105662dee777",
+                "value": {
+                  "name": "20190628023902_create_addresses.rb",
+                  "type": "file",
+                  "identifier": "90af58b5-086a-3f18-b8ae-105662dee777",
+                  "timestamp": "2019-06-28 08:14:28 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190628023902_create_addresses.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "0f72bad9-45df-3a8f-b4d4-df2c79c5b854",
+                          "value": {
+                            "name": "CreateAddresses",
+                            "type": "class",
+                            "identifier": "0f72bad9-45df-3a8f-b4d4-df2c79c5b854",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "798b0a72-6f8f-3cd1-8437-69948dd4fdee",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "798b0a72-6f8f-3cd1-8437-69948dd4fdee",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "fa59a254-01f3-3629-a178-9e63b12d0410",
+                "value": {
+                  "name": "20190627043409_create_vendor_items.rb",
+                  "type": "file",
+                  "identifier": "fa59a254-01f3-3629-a178-9e63b12d0410",
+                  "timestamp": "2019-06-28 08:19:32 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627043409_create_vendor_items.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "399cdf15-b41f-35c8-b282-fa9a4cad21c2",
+                          "value": {
+                            "name": "CreateVendorItems",
+                            "type": "class",
+                            "identifier": "399cdf15-b41f-35c8-b282-fa9a4cad21c2",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "23a412c7-ce02-3512-a6bf-d4852346814a",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "23a412c7-ce02-3512-a6bf-d4852346814a",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "06823804-f219-302e-b636-3bd633c5cef4",
+                "value": {
+                  "name": "20190627042353_create_units.rb",
+                  "type": "file",
+                  "identifier": "06823804-f219-302e-b636-3bd633c5cef4",
+                  "timestamp": "2019-06-27 09:53:53 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627042353_create_units.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "cd2dce1d-bc0b-3018-96af-bafcc9118323",
+                          "value": {
+                            "name": "CreateUnits",
+                            "type": "class",
+                            "identifier": "cd2dce1d-bc0b-3018-96af-bafcc9118323",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "16c8744b-134c-34d5-85c5-8c3cb192f722",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "16c8744b-134c-34d5-85c5-8c3cb192f722",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "356a1316-c317-33d1-aeb8-fe4775466340",
+                "value": {
+                  "name": "20190627030927_create_item_attributes.rb",
+                  "type": "file",
+                  "identifier": "356a1316-c317-33d1-aeb8-fe4775466340",
+                  "timestamp": "2019-06-27 08:48:43 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627030927_create_item_attributes.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "61369b6d-465b-3be9-a89a-fab14c37aa26",
+                          "value": {
+                            "name": "CreateItemAttributes",
+                            "type": "class",
+                            "identifier": "61369b6d-465b-3be9-a89a-fab14c37aa26",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "6dfd1a6d-7d28-35ca-a832-29d65a5ff419",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "6dfd1a6d-7d28-35ca-a832-29d65a5ff419",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "0e6796e0-5b9b-3ce5-aa48-333cf8129972",
+                "value": {
+                  "name": "20190628034315_create_deliveries.rb",
+                  "type": "file",
+                  "identifier": "0e6796e0-5b9b-3ce5-aa48-333cf8129972",
+                  "timestamp": "2019-06-28 09:13:15 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190628034315_create_deliveries.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "aa9111ee-26fd-32f9-83c5-441b72572c1b",
+                          "value": {
+                            "name": "CreateDeliveries",
+                            "type": "class",
+                            "identifier": "aa9111ee-26fd-32f9-83c5-441b72572c1b",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "e62c6291-b8e1-3150-b93e-345d9b845cd6",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "e62c6291-b8e1-3150-b93e-345d9b845cd6",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "121ed3c1-d5ef-3102-8630-0a2c00d59c49",
+                "value": {
+                  "name": "20190628024136_create_subscriptions.rb",
+                  "type": "file",
+                  "identifier": "121ed3c1-d5ef-3102-8630-0a2c00d59c49",
+                  "timestamp": "2019-06-28 09:03:31 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190628024136_create_subscriptions.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "515f04c0-fe4f-368f-90ea-ea71a7c0fc57",
+                          "value": {
+                            "name": "CreateSubscriptions",
+                            "type": "class",
+                            "identifier": "515f04c0-fe4f-368f-90ea-ea71a7c0fc57",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "cda3d692-a4f3-3bb3-aca8-f9c84f1b3927",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "cda3d692-a4f3-3bb3-aca8-f9c84f1b3927",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "c7cce01d-4bb5-36ad-bddc-230e88072301",
+                "value": {
+                  "name": "20190627042708_create_users.rb",
+                  "type": "file",
+                  "identifier": "c7cce01d-4bb5-36ad-bddc-230e88072301",
+                  "timestamp": "2019-06-27 09:57:08 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627042708_create_users.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "73fbcaa9-d951-317b-9f86-2e7a8baa787b",
+                          "value": {
+                            "name": "CreateUsers",
+                            "type": "class",
+                            "identifier": "73fbcaa9-d951-317b-9f86-2e7a8baa787b",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "46bf418b-59b4-31a4-b6b9-98f2217e6987",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "46bf418b-59b4-31a4-b6b9-98f2217e6987",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "7a3c4db4-217d-3fb4-9ddf-138a122bdfb3",
+                "value": {
+                  "name": "20190627031026_create_attribute_choices.rb",
+                  "type": "file",
+                  "identifier": "7a3c4db4-217d-3fb4-9ddf-138a122bdfb3",
+                  "timestamp": "2019-06-27 08:44:32 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/migrate/20190627031026_create_attribute_choices.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "0e2f6bc3-ab56-3018-831f-64fce4a5cb44",
+                          "value": {
+                            "name": "CreateAttributeChoices",
+                            "type": "class",
+                            "identifier": "0e2f6bc3-ab56-3018-831f-64fce4a5cb44",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "97d2ee54-c211-3030-924b-70604e3167bd",
+                                    "value": {
+                                      "name": "change()",
+                                      "type": "method",
+                                      "identifier": "97d2ee54-c211-3030-924b-70604e3167bd",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member",
+                                "httpOutbound": [
+
+                                ],
+                                "httpInbound": [
+
+                                ],
+                                "dbConnections": [
+
+                                ],
+                                "kafkaProducer": [
+
+                                ],
+                                "kafkaConsumer": [
+
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "8a7410d7-1c8a-39ae-bdfe-9cb93c52f267",
+                "value": {
+                  "name": "schema.rb",
+                  "type": "file",
+                  "identifier": "8a7410d7-1c8a-39ae-bdfe-9cb93c52f267",
+                  "timestamp": "2019-06-28 11:01:58 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/schema.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "b732d367-9c5a-3795-b7f0-3ef09f2be355",
+                "value": {
+                  "name": "seeds.rb",
+                  "type": "file",
+                  "identifier": "b732d367-9c5a-3795-b7f0-3ef09f2be355",
+                  "timestamp": "2019-06-28 11:01:03 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/db/seeds.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "0dc93f30-6ef7-3aff-8b9b-757383e845c3",
+                "value": {
+                  "name": "channel.rb",
+                  "type": "file",
+                  "identifier": "0dc93f30-6ef7-3aff-8b9b-757383e845c3",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/channels/application_cable/channel.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "4b36ec9b-c964-373d-93b4-bbdf713e94b2",
+                          "value": {
+                            "name": "ApplicationCable",
+                            "type": "module",
+                            "identifier": "4b36ec9b-c964-373d-93b4-bbdf713e94b2",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "931317ca-78ae-3dcd-a11d-fa7b3fe20b0b",
+                                    "value": {
+                                      "name": "Channel",
+                                      "type": "class",
+                                      "identifier": "931317ca-78ae-3dcd-a11d-fa7b3fe20b0b",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "priority1": "",
+                                        "priority2": "",
+                                        "totalBug": "",
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ],
+                                      "level": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "source"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "module",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "ea4a14a1-8c65-3248-a838-cef9c7a5be6c",
+                "value": {
+                  "name": "connection.rb",
+                  "type": "file",
+                  "identifier": "ea4a14a1-8c65-3248-a838-cef9c7a5be6c",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/channels/application_cable/connection.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "83ab927c-0d87-307c-8ca3-766ffd3da972",
+                          "value": {
+                            "name": "ApplicationCable",
+                            "type": "module",
+                            "identifier": "83ab927c-0d87-307c-8ca3-766ffd3da972",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "643006ed-d8bd-3ac0-aa18-7dd25e176b04",
+                                    "value": {
+                                      "name": "Connection",
+                                      "type": "class",
+                                      "identifier": "643006ed-d8bd-3ac0-aa18-7dd25e176b04",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "priority1": "",
+                                        "priority2": "",
+                                        "totalBug": "",
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ],
+                                      "level": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "source"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "module",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "8e115784-96c6-3eaa-b7ef-8888968b0ca4",
+                "value": {
+                  "name": "application_mailer.rb",
+                  "type": "file",
+                  "identifier": "8e115784-96c6-3eaa-b7ef-8888968b0ca4",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/mailers/application_mailer.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "e61b78cb-10cc-383f-93fb-a71c51d8a26d",
+                          "value": {
+                            "name": "ApplicationMailer",
+                            "type": "class",
+                            "identifier": "e61b78cb-10cc-383f-93fb-a71c51d8a26d",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "f5f77e9c-94c0-3fd1-a817-f3f6788eff49",
+                "value": {
+                  "name": "application_job.rb",
+                  "type": "file",
+                  "identifier": "f5f77e9c-94c0-3fd1-a817-f3f6788eff49",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/jobs/application_job.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "b65d9ce6-9a37-31ed-99c6-c3dfe7d3bc68",
+                          "value": {
+                            "name": "ApplicationJob",
+                            "type": "class",
+                            "identifier": "b65d9ce6-9a37-31ed-99c6-c3dfe7d3bc68",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "9596e477-1f14-3cd0-b1bf-159116f48213",
+                "value": {
+                  "name": "address.rb",
+                  "type": "file",
+                  "identifier": "9596e477-1f14-3cd0-b1bf-159116f48213",
+                  "timestamp": "2019-07-25 15:05:30 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/models/address.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "82a84db8-ec78-3b66-9d7a-c50ce252b957",
+                          "value": {
+                            "name": "Address",
+                            "type": "class",
+                            "identifier": "82a84db8-ec78-3b66-9d7a-c50ce252b957",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        },
+                        {
+                          "key": "2b040b03-3f21-30e8-a41a-a3b59e3a5a72",
+                          "value": {
+                            "name": "Default",
+                            "type": "class",
+                            "identifier": "2b040b03-3f21-30e8-a41a-a3b59e3a5a72",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "/home/sez27/workspace/dairy/app/models/address.rb",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "544c5f78-3841-3818-acf3-3d03c328543a",
+                                    "value": {
+                                      "name": "aa()",
+                                      "type": "method",
+                                      "identifier": "544c5f78-3841-3818-acf3-3d03c328543a",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "77ed34dc-9cf6-361c-8630-128dcccbefcf",
+                                    "value": {
+                                      "name": "bb()",
+                                      "type": "method",
+                                      "identifier": "77ed34dc-9cf6-361c-8630-128dcccbefcf",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "member"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "737a2a81-4558-355b-8f6b-e708acd744a6",
+                "value": {
+                  "name": "application_helper.rb",
+                  "type": "file",
+                  "identifier": "737a2a81-4558-355b-8f6b-e708acd744a6",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/helpers/application_helper.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "e5e619e8-608e-3644-9640-073c7786fe9c",
+                          "value": {
+                            "name": "ApplicationHelper",
+                            "type": "module",
+                            "identifier": "e5e619e8-608e-3644-9640-073c7786fe9c",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "module",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "8ab12b63-0495-370b-aa6a-c6e5fbd9aaa5",
+                "value": {
+                  "name": "application_controller.rb",
+                  "type": "file",
+                  "identifier": "8ab12b63-0495-370b-aa6a-c6e5fbd9aaa5",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/app/controllers/application_controller.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "c649a303-f1bd-31de-8c0e-a40112103a25",
+                          "value": {
+                            "name": "ApplicationController",
+                            "type": "class",
+                            "identifier": "c649a303-f1bd-31de-8c0e-a40112103a25",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "f93dad2b-a249-3c0a-97dd-e1d85e8fc291",
+                "value": {
+                  "name": "environment.rb",
+                  "type": "file",
+                  "identifier": "f93dad2b-a249-3c0a-97dd-e1d85e8fc291",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/environment.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "72d34cde-0f07-31a1-8840-7356e4fe2056",
+                "value": {
+                  "name": "puma.rb",
+                  "type": "file",
+                  "identifier": "72d34cde-0f07-31a1-8840-7356e4fe2056",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/puma.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "4587fb6e-8306-32b5-9b0e-533843a8e56a",
+                "value": {
+                  "name": "assets.rb",
+                  "type": "file",
+                  "identifier": "4587fb6e-8306-32b5-9b0e-533843a8e56a",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/assets.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "620baf36-e64b-337e-a3cc-2cab98ccb634",
+                "value": {
+                  "name": "mime_types.rb",
+                  "type": "file",
+                  "identifier": "620baf36-e64b-337e-a3cc-2cab98ccb634",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/mime_types.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "d527de74-945b-3672-acef-2951a52f929e",
+                "value": {
+                  "name": "content_security_policy.rb",
+                  "type": "file",
+                  "identifier": "d527de74-945b-3672-acef-2951a52f929e",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/content_security_policy.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "1b52489d-b2cc-319d-89ec-6375fa02436c",
+                "value": {
+                  "name": "application_controller_renderer.rb",
+                  "type": "file",
+                  "identifier": "1b52489d-b2cc-319d-89ec-6375fa02436c",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/application_controller_renderer.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "77e88fe2-fbe3-3a8c-b59f-ddc8d01af7d3",
+                "value": {
+                  "name": "wrap_parameters.rb",
+                  "type": "file",
+                  "identifier": "77e88fe2-fbe3-3a8c-b59f-ddc8d01af7d3",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/wrap_parameters.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "b5dd3637-688c-3389-9123-b2de03e547e0",
+                "value": {
+                  "name": "cookies_serializer.rb",
+                  "type": "file",
+                  "identifier": "b5dd3637-688c-3389-9123-b2de03e547e0",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/cookies_serializer.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "ff686f4a-9616-32fa-8e84-459e1a265ad2",
+                "value": {
+                  "name": "filter_parameter_logging.rb",
+                  "type": "file",
+                  "identifier": "ff686f4a-9616-32fa-8e84-459e1a265ad2",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/filter_parameter_logging.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "43935b4f-47a2-34b0-b760-a80d85aa86b8",
+                "value": {
+                  "name": "inflections.rb",
+                  "type": "file",
+                  "identifier": "43935b4f-47a2-34b0-b760-a80d85aa86b8",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/inflections.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "895b9d72-c626-3cba-8b0f-76e4dc79450c",
+                "value": {
+                  "name": "backtrace_silencers.rb",
+                  "type": "file",
+                  "identifier": "895b9d72-c626-3cba-8b0f-76e4dc79450c",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/initializers/backtrace_silencers.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "43ccbf94-81f7-3120-96a0-9909107ce1b2",
+                "value": {
+                  "name": "development.rb",
+                  "type": "file",
+                  "identifier": "43ccbf94-81f7-3120-96a0-9909107ce1b2",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/environments/development.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "30e464a8-0d87-313d-8527-f9e3257c6024",
+                "value": {
+                  "name": "production.rb",
+                  "type": "file",
+                  "identifier": "30e464a8-0d87-313d-8527-f9e3257c6024",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/environments/production.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "666d3f0e-7532-344a-be72-e739b3a5b1b8",
+                "value": {
+                  "name": "test.rb",
+                  "type": "file",
+                  "identifier": "666d3f0e-7532-344a-be72-e739b3a5b1b8",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/environments/test.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "a0a4608c-ee61-3c6c-b129-82f2abe932d2",
+                "value": {
+                  "name": "routes.rb",
+                  "type": "file",
+                  "identifier": "a0a4608c-ee61-3c6c-b129-82f2abe932d2",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/routes.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "6fa17cba-1087-35c6-bc56-804fc87ef308",
+                "value": {
+                  "name": "spring.rb",
+                  "type": "file",
+                  "identifier": "6fa17cba-1087-35c6-bc56-804fc87ef308",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/spring.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "846e4ae4-3eff-374f-abd6-16e316a629bc",
+                "value": {
+                  "name": "application.rb",
+                  "type": "file",
+                  "identifier": "846e4ae4-3eff-374f-abd6-16e316a629bc",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/application.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "865a18b8-3b6c-3947-b542-91b2c835a8bd",
+                          "value": {
+                            "name": "Dairy",
+                            "type": "module",
+                            "identifier": "865a18b8-3b6c-3947-b542-91b2c835a8bd",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+                              {
+                                "entry": [
+                                  {
+                                    "key": "6d664847-f616-3dea-9a6c-cdfbbcace521",
+                                    "value": {
+                                      "name": "Application",
+                                      "type": "class",
+                                      "identifier": "6d664847-f616-3dea-9a6c-cdfbbcace521",
+                                      "timestamp": "",
+                                      "manifest": "",
+                                      "version": "",
+                                      "vulnerabilitySummary": {
+                                        "priority1": "",
+                                        "priority2": "",
+                                        "totalBug": "",
+                                        "vulnerabilities": [
+
+                                        ]
+                                      },
+                                      "location": "",
+                                      "levelusages": [
+
+                                      ],
+                                      "level": [
+
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "levelType": "source"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "module",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "b3bbb05e-6797-3a8f-bf84-e6ff1fca0dee",
+                "value": {
+                  "name": "boot.rb",
+                  "type": "file",
+                  "identifier": "b3bbb05e-6797-3a8f-bf84-e6ff1fca0dee",
+                  "timestamp": "2019-06-27 08:30:14 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/config/boot.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+
+                  ]
+                }
+              },
+              {
+                "key": "3040264a-778d-34d6-8967-bf9c362597ff",
+                "value": {
+                  "name": "batch_test.rb",
+                  "type": "file",
+                  "identifier": "3040264a-778d-34d6-8967-bf9c362597ff",
+                  "timestamp": "2019-06-28 09:43:27 +0530",
+                  "manifest": "",
+                  "version": "",
+                  "location": "/test/models/batch_test.rb",
+                  "appLocation": "",
+                  "levelusages": [
+
+                  ],
+                  "level": [
+                    {
+                      "entry": [
+                        {
+                          "key": "6da977a6-d13e-346e-b71f-5ee573b70b81",
+                          "value": {
+                            "name": "BatchTest",
+                            "type": "class",
+                            "identifier": "6da977a6-d13e-346e-b71f-5ee573b70b81",
+                            "timestamp": "",
+                            "manifest": "",
+                            "version": "",
+                            "vulnerabilitySummary": {
+                              "priority1": "",
+                              "priority2": "",
+                              "totalBug": "",
+                              "vulnerabilities": [
+
+                              ]
+                            },
+                            "location": "",
+                            "levelusages": [
+
+                            ],
+                            "level": [
+
+                            ]
+                          }
+                        }
+                      ],
+                      "levelType": "source",
+                      "httpOutbound": [
+
+                      ],
+                      "httpInbound": [
+
+                      ],
+                      "dbConnections": [
+
+                      ],
+                      "kafkaProducer": [
+
+                      ],
+                      "kafkaConsumer": [
+
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "levelType": "file"
+          }
+        ],
+        "allFiles": [
+
+        ],
+        "firstCycle": "no"
+      }
+    ],
+    "queueName": "",
+    "region": "",
+    "s3Bucket": "",
+    "securityData": false
+  }
+}
