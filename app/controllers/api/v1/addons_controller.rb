@@ -18,7 +18,7 @@ class Api::V1::AddonsController < ApplicationController
 
 	def update
 		@add_on.update(addon_params)
-	  render json: { error: @add_on.error }, status: :unprocessable_entity unless @add_on.valid?
+	  render json: { error: @add_on.errors }, status: :unprocessable_entity unless @add_on.valid?
 	end
 
 	def destroy

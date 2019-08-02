@@ -17,9 +17,8 @@ class Api::V1::CustomersController < ApplicationController
 	end
 
 	def update
-		byebug
     @customer.update(customer_params)
-	  render json: { error: @customer.error }, status: :unprocessable_entity unless @customer.valid?
+	  render json: { error: @customer.errors }, status: :unprocessable_entity unless @customer.valid?
 	end
 
 	def destroy

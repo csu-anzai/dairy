@@ -18,7 +18,7 @@ class Api::V1::SubscriptionsController < ApplicationController
 
 	def update
     @subscription.update(subscription_params)
-    render json: { error: @subscription.error }, status: :unprocessable_entity unless @subscription.valid?
+    render json: { error: @subscription.errors }, status: :unprocessable_entity unless @subscription.valid?
 	end
 
 	def destroy
