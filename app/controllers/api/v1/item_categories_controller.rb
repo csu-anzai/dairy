@@ -18,7 +18,7 @@ class Api::V1::ItemCategoriesController < ApplicationController
 
 	def update
 		@item_category.update(i_category_params)
-	  render json: { error: @item_category.error }, status: :unprocessable_entity unless @item_category.valid?
+	  render json: { error: @item_category.errors }, status: :unprocessable_entity unless @item_category.valid?
 	end
 
 	def destroy
