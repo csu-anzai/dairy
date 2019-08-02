@@ -18,7 +18,7 @@ class Api::V1::AddressesController < ApplicationController
 
 	def update
 		@address.update(address_params)
-	  render json: { error: @address.error }, status: :unprocessable_entity unless @address.valid?
+	  render json: { error: @address.errors }, status: :unprocessable_entity unless @address.valid?
 	end
 
 	def destroy
