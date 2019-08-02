@@ -44,4 +44,5 @@ sup_bt = i_v.batches.create(vendor: sup1, code: 'SLY101', manufacturing_date: Da
 stock = vnd_bt.create_stock(quantity: 100, unit: u2)
 actual_delivery = ActualDelivery.create!(address_id: cst_add.id, subscription_id: subs.id, delivery_executive_id: d_exe1.id, unit_id: u2.id, quantity: 2.250, amount: 250.50, remarks: nil, status: "delivered")
 # Subscription.active.each { |subs| subs.deliveries.create(address: subs.address, status: 'delivered') }
+
 AdminUser.create!(email: 'admin@gwalg.com', password: 'Secure@admin!', password_confirmation: 'Secure@admin!')
