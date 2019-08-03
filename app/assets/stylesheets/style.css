@@ -101,7 +101,7 @@ a:hover {
 }
 
 .text-li {
-    color: #f8f9fa;
+    color: #052b2b;
 }
 
 .bg-li {
@@ -626,7 +626,7 @@ a.reqe-button {
 }
 
 .banner-top {
-    background: url(3.jpg) no-repeat bottom;
+    background: url(banners/b2.jpg) no-repeat bottom;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -635,7 +635,7 @@ a.reqe-button {
 }
 
 .banner-top1 {
-    background: url(2.jpg) no-repeat bottom;
+    background: url(banners/b3.jpg) no-repeat bottom;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -644,7 +644,7 @@ a.reqe-button {
 }
 
 .banner-top2 {
-    background: url(1.jpg) no-repeat top;
+    background: url(banners/b1.jpg) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -653,7 +653,7 @@ a.reqe-button {
 }
 
 .banner-top3 {
-    background: url(4.jpg) no-repeat 0px 0px;
+    background: url(banners/b5.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1045,7 +1045,7 @@ a.butn-w3pvt:hover {
 
 /* testimonials */
 .clients {
-    background: url(bg1.jpg) no-repeat center;
+    background: url(bg1.png) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1110,7 +1110,7 @@ ol.carousel-indicators {
 
 /* stats */
 .stats-info {
-    background: url(4.jpg) no-repeat center;
+    background: url(banners/b6.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
