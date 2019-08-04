@@ -11,9 +11,9 @@
 			<div class="nav_w3ls">
 				<nav>
 					<label for="drop" class="toggle toogle-2">Menu</label>
-					<input type="checkbox" id="drop" />
+					<!-- <input type="checkbox" id="drop" /> -->
 					<ul class="menu">
-						<li class="active ml-0"><a href="/">Home</a></li>
+						<li class=""><a href="/">Home</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#how_it_works">Work Flow</a></li>
 						<li><a href="#process">Process</a></li>
@@ -42,8 +42,8 @@
 
 <script>
     $(".menu li").on("click", function() {
-      $(".menu li").removeClass("ml-0 active");
-      $(this).addClass("ml-0 active");
+      $(".menu li").removeClass("active");
+      $(this).addClass("active");
       console.log(this);	
     });
 
