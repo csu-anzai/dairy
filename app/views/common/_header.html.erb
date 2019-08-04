@@ -39,3 +39,12 @@
 		</div>
 	</div>
 </header>
+
+<script>
+    $(".menu li").on("click", function() {
+      $(".menu li").removeClass("ml-0 active");
+      $(this).addClass("ml-0 active");
+      console.log(this);	
+    });
+
+</script>
