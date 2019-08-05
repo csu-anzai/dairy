@@ -1,3 +1,4 @@
+json.code @add.present? ? 200 : 500
 json.add_ons do
 	json.array! @add_ons do |addon|
 	  json.id addon.id
