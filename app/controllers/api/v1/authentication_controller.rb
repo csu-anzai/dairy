@@ -1,9 +1,10 @@
 class Api::V1::AuthenticationController < ApplicationController
 
 	before_action :authorize_request, except: [:login, :forgot_password, :reset_password]
+  before_action :set_user, only: [:login, :forgot_password]
 
   def login
-    @user = User.find_by_email(params[:auth][:email])
+    # @user = User.find_by_email(params[:auth][:email])
     if @user&.authenticate(params[:auth][:password])
       @token = JsonWebToken.encode(user_id: @user.id)
       @time = Time.now + 24.hours.to_i
@@ -58,10 +59,8 @@ class Api::V1::AuthenticationController < ApplicationController
   end
 
   def forgot_password
-    user_name = params[:auth][:username].strip
-    user = User.find_by("username = ? or email = ? or mobile = ?", user_name, user_name, user_name)
-    if user
-      user.update(otp: otp_generator, otp_sent_at: Time.current)
+    if @user
+      @user.update(otp: otp_generator, otp_sent_at: Time.current)
       # mail to user.email
       # sms otp to user.mobile
     else
@@ -78,6 +77,11 @@ class Api::V1::AuthenticationController < ApplicationController
       render json: { error: "Password mismatched!" }, status: :unprcessable_entity
     end
 
+  end
+
+  def set_user
+    user_name = params[:auth][:username].strip
+    @user = User.find_by("username = ? or email = ? or mobile = ?", user_name, user_name, user_name)
   end
 
   def otp_generator
