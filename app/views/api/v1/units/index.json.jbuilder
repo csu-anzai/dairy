@@ -1,3 +1,4 @@
+json.access_code @units.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.units do
 	json.array! @units do |u|
 	  json.id u.id

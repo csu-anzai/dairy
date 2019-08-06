@@ -1,11 +1,13 @@
+json.access_code @address.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Updated successfully'
+json.address do 
   json.id @address.id
   json.address1 @address.address1
   json.address2 @address.address2
   json.addressable do
-  	json.user_name @address.addressable.name
-  	json.mobile @address.addressable.mobile
-  	json.date_of_birth @address.addressable.date_of_birth
+    json.user_name @address.addressable.name
+    json.mobile @address.addressable.mobile
+    json.date_of_birth @address.addressable.date_of_birth
   end
   json.latitude @address.latitude
   json.longitude @address.longitude
@@ -19,3 +21,4 @@ json.message 'Updated successfully'
   json.updated_by @address.updated_by
   json.created_at @address.created_at
   json.updated_at @address.updated_at
+end

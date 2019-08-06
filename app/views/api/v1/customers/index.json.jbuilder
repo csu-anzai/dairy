@@ -1,3 +1,4 @@
+json.access_code @customers.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.customers do
 	json.array! @customers do |cust|
 	  json.id cust.id

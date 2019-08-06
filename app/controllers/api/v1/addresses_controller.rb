@@ -5,11 +5,11 @@ class Api::V1::AddressesController < ApplicationController
 
 	def create
     @address = Address.create(address_params)
-    render json: {error: @address.errors}, status: :unprcessable_entity unless @address.valid?
+    render json: {access_code: I18n.t('access_code.failure'), error: @address.errors}, status: :unprcessable_entity unless @address.valid?
 	end
 
 	def index
-		@address = @current_user.addresses
+		@addresses = @current_user.addresses
 	end
 
 	def show
@@ -18,19 +18,19 @@ class Api::V1::AddressesController < ApplicationController
 
 	def update
 		@address.update(address_params)
-	  render json: { error: @address.errors }, status: :unprocessable_entity unless @address.valid?
+	  render json: {access_code: I18n.t('access_code.failure'), error: @address.errors }, status: :unprocessable_entity unless @address.valid?
 	end
 
 	def destroy
 		@address.destroy
-  	render json: { errors: @address.errors }, status: :unprocessable_entity unless @address
+  	render json: {access_code: I18n.t('access_code.failure'), errors: @address.errors }, status: :unprocessable_entity unless @address
 	end
 
 	private
 
 	def set_address
 		@address = Address.find_by_id(params[:id])
-	  render json: {errors: {address: 'not found'} }, status: :not_found unless @address
+	  render json: {access_code: I18n.t('access_code.failure'), error: {address: I18n.t('model.not_found')} }, status: :not_found unless @address
 	end
 
 	def address_params

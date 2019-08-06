@@ -1,3 +1,4 @@
+json.access_code @add_on.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Updated successfully'
 json.add_on do 
 	json.id @add_on.id
@@ -11,4 +12,4 @@ json.add_on do
 	json.status @add_on.status
 	json.created_at @add_on.created_at
 	json.updated_at @add_on.updated_at
-end 
+end

@@ -1,3 +1,4 @@
+json.access_code @user.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Logged in successfully'
 json.user do 
 	json.id @user.id
@@ -6,4 +7,4 @@ json.user do
 	json.token @token
 	json.created_at @user.created_at
 	json.updated_at @user.updated_at
-end 
+end

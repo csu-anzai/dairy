@@ -4,6 +4,7 @@ class Api::V1::UnitsController < ApplicationController
 
 	def index
 		@units = Unit.all
+		render json: {access_code: I18n.t('access_code.failure')}, status: :unprcessable_entity unless @units.present?
 	end
 
 end

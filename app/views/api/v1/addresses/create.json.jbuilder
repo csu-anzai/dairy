@@ -1,3 +1,4 @@
+json.access_code @address.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Created successfully'
 json.address do 
   json.id @address.id
@@ -20,4 +21,4 @@ json.address do
   json.updated_by @address.updated_by
   json.created_at @address.created_at
   json.updated_at @address.updated_at
-end 
+end
