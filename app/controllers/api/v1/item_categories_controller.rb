@@ -5,11 +5,11 @@ class Api::V1::ItemCategoriesController < ApplicationController
 
 	def create
     @item_category = ItemCategory.create(i_category_params)
-    render json: {error: @item_category.errors}, status: :unprcessable_entity unless @item_category.valid?
+    render json: {access_code: I18n.t('access_code.failure'), error: @item_category.errors}, status: :unprcessable_entity unless @item_category.valid?
 	end
 
 	def index
-		@item_category = ItemCategory.all
+		@item_categories = ItemCategory.all
 	end
 
 	def show
@@ -18,19 +18,19 @@ class Api::V1::ItemCategoriesController < ApplicationController
 
 	def update
 		@item_category.update(i_category_params)
-	  render json: { error: @item_category.errors }, status: :unprocessable_entity unless @item_category.valid?
+	  render json: {access_code: I18n.t('access_code.failure'), error: @item_category.errors }, status: :unprocessable_entity unless @item_category.valid?
 	end
 
 	def destroy
 		@item_category.destroy
-  	render json: { errors: @item_category.errors }, status: :unprocessable_entity unless @item_category
+  	render json: {access_code: I18n.t('access_code.failure'), errors: @item_category.errors }, status: :unprocessable_entity unless @item_category
 	end
 
 	private
 
 	def set_category
 		@item_category = ItemCategory.find_by_id(params[:id])
-	  render json: {errors: {item_category: 'not found'} }, status: :not_found unless @item_category
+	  render json: {access_code: I18n.t('access_code.failure'), errors: { item_category: I18n.t('model.not_found') } }, status: :not_found unless @item_category
 	end
 
 	def i_category_params

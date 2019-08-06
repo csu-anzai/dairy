@@ -1,3 +1,4 @@
+json.access_code @batches.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.batches do
 	json.array! @batches do |bat|
 	  json.id bat.id

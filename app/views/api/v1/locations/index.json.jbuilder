@@ -1,3 +1,4 @@
+json.access_code @locations.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.locations do
 	json.array! @locations do |loc|
 	  json.id loc.id

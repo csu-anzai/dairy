@@ -1,3 +1,4 @@
+json.access_code @subscriptions.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.subscriptions do 
 	json.array! @subscriptions do |subs|
 	  json.id subs.id

@@ -1,3 +1,4 @@
+json.access_code @attribute_choices.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.attribute_choices do
 	json.array! @attribute_choices do |attr_chc|
 	  json.id attr_chc.id

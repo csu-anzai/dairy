@@ -1,5 +1,6 @@
+json.access_code @addresses.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.addresses do
-	json.array! @address do |add|
+	json.array! @addresses do |add|
 	  json.id add.id
 	  json.address1 add.address1
 	  json.address2 add.address2

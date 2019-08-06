@@ -5,7 +5,7 @@ class Api::V1::SubscriptionsController < ApplicationController
 
 	def create
     @subscription = Subscription.create(subscription_params)
-    render json: {error: @subscription.errors}, status: :unprcessable_entity unless @subscription.valid?
+    render json: {access_code: I18n.t('access_code.failure'), error: @subscription.errors}, status: :unprcessable_entity unless @subscription.valid?
 	end
 
 	def index
@@ -18,19 +18,19 @@ class Api::V1::SubscriptionsController < ApplicationController
 
 	def update
     @subscription.update(subscription_params)
-    render json: { error: @subscription.errors }, status: :unprocessable_entity unless @subscription.valid?
+    render json: {access_code: I18n.t('access_code.failure'), error: @subscription.errors }, status: :unprocessable_entity unless @subscription.valid?
 	end
 
 	def destroy
 		@subscription.destroy
-  	render json: { errors: @subscription.errors }, status: :unprocessable_entity unless @subscription
+  	render json: {access_code: I18n.t('access_code.failure'), errors: @subscription.errors }, status: :unprocessable_entity unless @subscription
 	end
 
 	private
 
 	def set_subscription
 		@subscription = Subscription.find_by_id(params[:id])
-	  render json: {errors: {subscription: 'not found'} }, status: :not_found unless @subscription
+	  render json: {access_code: I18n.t('access_code.failure'), errors: { subscription: I18n.t('model.not_found') } }, status: :not_found unless @subscription
 	end
 
 	def subscription_params

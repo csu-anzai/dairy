@@ -1,3 +1,4 @@
+json.access_code @subscription.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Created successfully'
 json.subscription do 
   json.id @subscription.id
@@ -16,4 +17,4 @@ json.subscription do
   json.updated_by @subscription.updated_by
   json.created_at @subscription.created_at
   json.updated_at @subscription.updated_at
-end 
+end

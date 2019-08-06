@@ -1,3 +1,4 @@
+json.access_code @d_executives.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.delivery_executives do
 	json.array! @d_executives do |exe|
 	  json.id exe.id

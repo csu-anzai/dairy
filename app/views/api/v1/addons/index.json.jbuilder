@@ -1,4 +1,4 @@
-json.code @add.present? ? 200 : 500
+json.access_code @add_ons.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.add_ons do
 	json.array! @add_ons do |addon|
 	  json.id addon.id

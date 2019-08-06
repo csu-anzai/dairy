@@ -1,3 +1,4 @@
+json.access_code @item_variants.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.item_variants do
 	json.array! @item_variants do |i_var|
 	  json.id i_var.id

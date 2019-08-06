@@ -5,7 +5,7 @@ class Api::V1::CustomersController < ApplicationController
 	
 	def create
     @customer = Customer.create(customer_params)
-    render json: {error: @customer.errors}, status: :unprcessable_entity unless @customer.valid?
+    render json: {access_code: I18n.t('access_code.failure'), error: @customer.errors}, status: :unprcessable_entity unless @customer.valid?
 	end
 
 	def index
@@ -18,19 +18,19 @@ class Api::V1::CustomersController < ApplicationController
 
 	def update
     @customer.update(customer_params)
-	  render json: { error: @customer.errors }, status: :unprocessable_entity unless @customer.valid?
+	  render json: {access_code: I18n.t('access_code.failure'), error: @customer.errors }, status: :unprocessable_entity unless @customer.valid?
 	end
 
 	def destroy
 		@customer.destroy
-  	render json: { errors: @customer.errors }, status: :unprocessable_entity unless @customer
+  	render json: {access_code: I18n.t('access_code.failure'), errors: @customer.errors }, status: :unprocessable_entity unless @customer
 	end
 
 	private
 
 	def set_customer
 		@customer = Customer.find_by_id(params[:id])
-	  render json: {errors: {customer: 'not found'} }, status: :not_found unless @customer
+	  render json: {access_code: I18n.t('access_code.failure'), errors: {customer: I18n.t('model.not_found')} }, status: :not_found unless @customer
 	end
 
 	def customer_params

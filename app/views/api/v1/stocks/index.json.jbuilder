@@ -1,3 +1,4 @@
+json.access_code @stocks.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.stocks do
 	json.array! @stocks do |stk|
 	  json.id stk.id

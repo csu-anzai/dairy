@@ -1,3 +1,4 @@
+json.access_code @customer.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.message 'Created successfully'
 json.customer do 
 	json.id @customer.id
