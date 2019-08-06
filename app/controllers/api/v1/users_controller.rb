@@ -35,7 +35,7 @@ class Api::V1::UsersController < ApplicationController
 	def find_user
     @user = User.find_by_username!(params[:_username])
 	  rescue ActiveRecord::RecordNotFound
-    render json: {access_code: I18n.t('access_code.failure'), errors: I18n.t('model.not_found') }, status: :not_found
+    render json: {access_code: I18n.t('access_code.failure'), errors: I18n.t('api.model.not_found') }, status: :not_found
 	end
 
 	def user_params

@@ -10,7 +10,7 @@ class Api::V1::AuthenticationController < ApplicationController
       @time = Time.now + 24.hours.to_i
       @user.update(token: @token)
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: 'unauthorized' }, status: :unauthorized
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.unauthorized') }, status: :unauthorized
     end
   end
 
@@ -18,7 +18,7 @@ class Api::V1::AuthenticationController < ApplicationController
     if @current_user
       @current_user.update(token: '')
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: "Cann't logout!" }, status: :unprcessable_entity
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.logout') }, status: :unprcessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class Api::V1::AuthenticationController < ApplicationController
     if @current_user.authenticate(params[:auth][:old_password].strip)
       match_password(params[:auth][:password].strip, params[:auth][:password_confirmation].strip)
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: "Old password mismatched!" }, status: :unprcessable_entity
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.old_pwd_mismatch') }, status: :unprcessable_entity
     end
     
   end
@@ -41,19 +41,19 @@ class Api::V1::AuthenticationController < ApplicationController
             if @current_user.otp == params[:auth][:otp]
               match_password(params[:auth][:password].strip, params[:auth][:password_confirmation].strip)
             else
-              render json: {access_code: I18n.t('access_code.failure'), error: "OTP mismatched."}, status: :unprcessable_entity
+              render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.otp_mismatch') }, status: :unprcessable_entity
             end
           else
-              render json: {access_code: I18n.t('access_code.failure'), error: "OTP expired."}, status: :unprcessable_entity
+              render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.otp_exp') }, status: :unprcessable_entity
           end
         else
-          render json: {access_code: I18n.t('access_code.failure'), error: "Unauthorize user."}, status: :unauthorized
+          render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.unauthorized') }, status: :unauthorized
         end
       else
-        render json: {access_code: I18n.t('access_code.failure'), error: "OTP is case sensitive."}, status: :unprcessable_entity
+        render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.otp_sensitive') }, status: :unprcessable_entity
       end
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: "Invalid OTP."}, status: :unprcessable_entity
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.otp_invalid') }, status: :unprcessable_entity
     end
 
   end
@@ -64,7 +64,7 @@ class Api::V1::AuthenticationController < ApplicationController
       # mail to user.email
       # sms otp to user.mobile
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: "Invalid username" }, status: :unprcessable_entity
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.invalid') }, status: :unprcessable_entity
     end
   end
 
@@ -74,7 +74,7 @@ class Api::V1::AuthenticationController < ApplicationController
     if password == password_confirm
       @current_user.update(password: password, password_confirmation: password_confirm)
     else
-      render json: {access_code: I18n.t('access_code.failure'), error: "Password mismatched!" }, status: :unprcessable_entity
+      render json: {access_code: I18n.t('access_code.failure'), error: I18n.t('api.auth.user.pwd_mismatch') }, status: :unprcessable_entity
     end
 
   end

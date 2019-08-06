@@ -1,5 +1,5 @@
 json.access_code @add_on.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
-json.message 'Created successfully'
+json.message I18n.t('api.model.created')
 json.add_on do 
 	json.id @add_on.id
 	json.subscription_id @add_on.subscription_id

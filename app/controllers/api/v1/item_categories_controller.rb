@@ -30,7 +30,7 @@ class Api::V1::ItemCategoriesController < ApplicationController
 
 	def set_category
 		@item_category = ItemCategory.find_by_id(params[:id])
-	  render json: {access_code: I18n.t('access_code.failure'), errors: { item_category: I18n.t('model.not_found') } }, status: :not_found unless @item_category
+	  render json: {access_code: I18n.t('access_code.failure'), errors: { item_category: I18n.t('api.model.not_found') } }, status: :not_found unless @item_category
 	end
 
 	def i_category_params

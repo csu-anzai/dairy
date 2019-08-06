@@ -30,7 +30,7 @@ class Api::V1::ItemAttributesController < ApplicationController
 
 	def set_attribute
 		@item_attribute = ItemAttribute.find_by_id(params[:id])
-	  render json: {access_code: I18n.t('access_code.failure'), error: { item_attribute: I18n.t('model.not_found') } }, status: :not_found unless @item_attribute
+	  render json: {access_code: I18n.t('access_code.failure'), error: { item_attribute: I18n.t('api.model.not_found') } }, status: :not_found unless @item_attribute
 	end
 
 	def item_attr_params
