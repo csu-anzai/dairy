@@ -30,7 +30,7 @@ class Api::V1::AddressesController < ApplicationController
 
 	def set_address
 		@address = Address.find_by_id(params[:id])
-	  render json: {access_code: I18n.t('access_code.failure'), error: {address: I18n.t('model.not_found')} }, status: :not_found unless @address
+	  render json: {access_code: I18n.t('access_code.failure'), error: {address: I18n.t('api.model.not_found')} }, status: :not_found unless @address
 	end
 
 	def address_params

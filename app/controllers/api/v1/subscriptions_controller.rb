@@ -30,7 +30,7 @@ class Api::V1::SubscriptionsController < ApplicationController
 
 	def set_subscription
 		@subscription = Subscription.find_by_id(params[:id])
-	  render json: {access_code: I18n.t('access_code.failure'), errors: { subscription: I18n.t('model.not_found') } }, status: :not_found unless @subscription
+	  render json: {access_code: I18n.t('access_code.failure'), errors: { subscription: I18n.t('api.model.not_found') } }, status: :not_found unless @subscription
 	end
 
 	def subscription_params

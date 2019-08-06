@@ -1,5 +1,5 @@
 json.access_code @address.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
-json.message 'Created successfully'
+json.message I18n.t('api.model.created')
 json.address do 
   json.id @address.id
   json.address1 @address.address1

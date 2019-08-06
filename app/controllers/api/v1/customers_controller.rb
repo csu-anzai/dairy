@@ -30,7 +30,7 @@ class Api::V1::CustomersController < ApplicationController
 
 	def set_customer
 		@customer = Customer.find_by_id(params[:id])
-	  render json: {access_code: I18n.t('access_code.failure'), errors: {customer: I18n.t('model.not_found')} }, status: :not_found unless @customer
+	  render json: {access_code: I18n.t('access_code.failure'), errors: {customer: I18n.t('api.model.not_found')} }, status: :not_found unless @customer
 	end
 
 	def customer_params

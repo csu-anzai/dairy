@@ -57,8 +57,24 @@ en:
       inactive: "Inactive"
 
   access_code:
-    failure: 501
     success: 200
+    failure: 501
   
-  model:
-    not_found: "Record not found!"
+  api:
+    model:
+      not_found: "No record found!"
+      created: "created successfully."
+      updated: "Updated successfully."
+      deleted: "Deleted successfully."
+
+    auth:
+      user:
+        unauthorized: "Unauthorized!"
+        logout: "Can't logout!"
+        pwd_mismatch: "Password mismatched!"
+        old_pwd_mismatch: "Old password mismatched!"
+        otp_mismatch: "OTP mismatched!"
+        otp_exp: "OTP expired."
+        otp_sensitive: "OTP is case sensitive."
+        otp_invalid: "Invalid OTP."
+        invalid: "Invalid username."
