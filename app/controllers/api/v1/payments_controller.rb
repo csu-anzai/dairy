@@ -10,6 +10,7 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def due_payment
 		@payment = @current_user.to_be_paid_amount
+		render json: {access_code: I18n.t('access_code.failure')}, status: :unprcessable_entity unless @payment.present?
 	end
 
 end
