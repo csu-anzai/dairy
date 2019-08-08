@@ -14,7 +14,7 @@ i_c.item_attributes << i_a1
 i_c.item_attributes << i_a2
 
 i = i_c.items.create(name: 'Milk')
-i_v = i.item_variants.create(title: "Cow milk" ,price: 45)
+i_v = i.item_variants.create(title: "Cow milk" ,price: 50)
 i_v.attribute_choices << a_c11
 i_v.attribute_choices << a_c21
 
@@ -35,7 +35,7 @@ d_exe_add = Address.create(address1: 'H.No- 051, Sect-1, Near- Railway station',
 
 location1 = vnd1.locations.create(name: 'first location', start_point: 'Railway dhala', end_point: 'Purani Bazar', delivery_executive: d_exe1, description: "This is base location.")
 
-subs = cst_add.subscriptions.create(item_variant: i_v, title: "First subscription", quantity: 1.5, unit: u2, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
+subs = cst_add.subscriptions.create(item_variant: i_v, title: "First subscription", quantity: 1, unit: u2, start_date: Date.today + 1.day, end_date: Date.today + 7.days, frequency: 1, status: 'active', call_verified: true)
 add_on1 = subs.create_active_addon(start_date: Date.today + 3.day, end_date: Date.today + 5.days, status: 'active', quantity: 1, unit: u2)
 
 vnd_bt = i_v.batches.create(vendor: vnd1, code: 'GVN103', manufacturing_date: Date.today - 1.days, expiry_date: Date.today + 5.days)

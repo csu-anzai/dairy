@@ -6,9 +6,9 @@ class Subscription < ApplicationRecord
 
   # Associations
   belongs_to :address, inverse_of: :subscriptions
-  belongs_to :item_variant, inverse_of: :subscriptions, dependent: :destroy
-  belongs_to :unit, inverse_of: :subscriptions, dependent: :destroy
-  belongs_to :delivery_executive, inverse_of: :subscription, dependent: :destroy, optional: true
+  belongs_to :item_variant, inverse_of: :subscriptions
+  belongs_to :unit, inverse_of: :subscriptions
+  belongs_to :delivery_executive, inverse_of: :subscription, optional: true
 
   has_one :customer, through: :address, source: :addressable, source_type: 'User'
   has_many :addons, inverse_of: :subscription, dependent: :destroy
@@ -17,9 +17,10 @@ class Subscription < ApplicationRecord
   has_many :payments, inverse_of: :subscription, dependent: :destroy
 
   accepts_nested_attributes_for :payments
+  delegate :price, to: :item_variant
 
   # scope
-  scope :active, -> { where('status = (?) and start_date <= (?) and end_date >= (?)', 'active', Date.current, Date.current) }
+  scope :active, -> { where('subscription.status = (?) and subscription.start_date <= (?) and subscription.end_date >= (?)', 'active', Date.current, Date.current) }
 
   # Validations
   validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/ , message: "must be valid!"}, numericality: { greater_than_or_equal_to: 0.25, less_than_or_equal_to: 1000 }

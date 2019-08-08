@@ -6,6 +6,7 @@ class Address < ApplicationRecord
   has_one :vendor, through: :location
   has_one :delivery_executive, through: :location
   has_many :subscriptions, inverse_of: :address, dependent: :destroy
+  has_many :active_subscriptions, -> {where("subscriptions.status = 'active'")}, class_name: 'Subscription', inverse_of: :address, dependent: :destroy
   has_many :actual_deliveries, inverse_of: :address, dependent: :destroy
 
   # Validations

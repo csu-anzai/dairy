@@ -4,8 +4,11 @@ class Addon < ApplicationRecord
   belongs_to :subscription, inverse_of: :addons
   belongs_to :unit, inverse_of: :addons
 
+  delegate :price, to: :subscription
+
   #scope
   scope :active, -> { where('status = (?) and start_date <= (?) and end_date >= (?)', 'active', Date.current, Date.current) }
+  scope :to_be_paid, -> { where( 'addons.start_date <= (?) ', Date.current) }
   
   # Validatins
   validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/ }, numericality: { greater_than_or_equal_to: 0.250, less_than_or_equal_to: 10000, message: "must be valid!" }
