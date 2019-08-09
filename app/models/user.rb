@@ -12,40 +12,6 @@ class User < ApplicationRecord
             through: :addresses, source: :subscriptions
   has_many :addons, through: :to_be_paid_subscriptions
 
-  def to_be_paid_amount
-    due_subs_amount + due_addon_amount
-  end
-
-  def due_subs_amount
-    to_be_paid_subscriptions
-      .includes(:addons, :item_variant, :payments)
-        .collect do |x|
-          [
-            (
-              (x.quantity * x.price * (((x.end_date.to_date >= Date.current ? Date.current : x.end_date.to_date) - x.start_date.to_date).to_i + 1)) - (x.payments ? x.payments.collect(&:amount).inject(&:+) : 0).to_i
-            )   
-          ]
-        end
-      .flatten.inject(&:+)
-    .to_f
-  end
-
-  def due_addon_amount
-    to_be_paid_subscriptions
-      .collect do |x|
-        [                    
-          ( 
-            x.addons.to_be_paid.collect do |y|
-              (y.price * y.quantity) * (((y.end_date.to_date >= Date.current ? Date.current : y.end_date.to_date) - y.start_date.to_date).to_i + 1)
-            end
-          ) || 0                    
-        ]
-      end
-      .flatten.inject(&:+)
-    .to_f
-  end
-
-
   scope :customers, -> { where(type: 'Customer') }
   scope :vendors, -> { where(type: 'Vendor') }
   scope :delivery_executive, -> { where(type: 'DeliveryExecutive') }
@@ -63,4 +29,44 @@ class User < ApplicationRecord
   validates :date_of_birth, date: { before: Proc.new { Date.today -10.years}, message: "must be before #{(Date.today - 10.years).to_s}!", allow_blank: true }
   validates :type, presence: true, length: {minimum: 4, maximum: 50}
 
+
+  def payment_data
+    data = []
+    to_be_paid_subscriptions.includes(:addons, :item_variant, :payments).each do |subs|
+      subs_detials = {}
+      # data << { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount + subs.addons.to_be_paid.collect(&:to_be_paid_amount).inject(&:+) }
+
+      subs_detials['subscriptions'] = { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount }
+      data << subs_detials
+      
+      subs.addons.to_be_paid.each do |addon|
+        addon_details = {}
+        addon_details['addons'] = { quantity: addon.quantity, price: addon.price, payable_days: addon.payable_days, amount: addon.to_be_paid_amount }
+        data << addon_details
+      end
+
+      data << { payments: {paid_amount: subs.payed_amount.to_i, total_payable: ( (subs_to_be_paid_amount + addons_to_be_paid_amount) -subs.payed_amount.to_i) } }
+
+    end
+    data
+  end
+
+  private
+
+  def subs_to_be_paid_amount
+    to_be_paid_subscriptions
+      .includes(:addons, :item_variant, :payments)
+      .collect(&:to_be_paid_amount)      
+      .flatten
+      .inject(&:+)
+      .to_f
+  end
+
+  def addons_to_be_paid_amount
+    to_be_paid_subscriptions
+      .collect{|subs| subs.addons.to_be_paid.collect(&:to_be_paid_amount) }
+      .flatten
+      .inject(&:+)
+      .to_f
+  end
 end

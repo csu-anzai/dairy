@@ -29,4 +29,22 @@ class Subscription < ApplicationRecord
   validates :end_date, presence: true, date: { after_or_equal_to:  :start_date, message: "must be after the start date!" }
   validates :remarks, allow_blank: true, length: {maximum: 1500, message: "must be less than 1500 characters!" }
 
+
+  def to_be_paid_amount
+    # (quantity * price * payable_days) - payed_amount.to_i
+    (quantity * price * payable_days)
+  end
+
+  def payable_end_date
+    end_date.to_date >= Date.current ? Date.current : end_date.to_date
+  end
+
+  def payable_days
+    (payable_end_date - start_date.to_date).to_i + 1
+  end
+
+  def payed_amount
+    payments ? payments.collect(&:amount).inject(&:+) : 0
+  end
+  
 end
