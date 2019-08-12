@@ -31,7 +31,6 @@ class Subscription < ApplicationRecord
 
 
   def to_be_paid_amount
-    # (quantity * price * payable_days) - payed_amount.to_i
     (quantity * price * payable_days)
   end
 

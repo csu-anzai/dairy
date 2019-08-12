@@ -30,7 +30,7 @@ Rails.application.routes.draw do
      resources :subscriptions, only: [:create, :index, :show, :update, :destroy]
      resources :addons, only: [:create, :index, :show, :update, :destroy]
      resources :actual_deliveries, only: [:create, :index, :show, :update, :destroy]
-     get '/payments/history', to: 'payments#payment_history'
+     post '/payments/history', to: 'payments#payment_history'
      get '/payments/due_payment', to: 'payments#due_payment'
     end 
   end 
