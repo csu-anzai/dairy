@@ -32,6 +32,8 @@ Rails.application.routes.draw do
      resources :actual_deliveries, only: [:create, :index, :show, :update, :destroy]
      post '/payments/history', to: 'payments#payment_history'
      get '/payments/due_payment', to: 'payments#due_payment'
+     post '/pages/about_us', to: 'pages#about'
+     post '/pages/help', to: 'pages#help'
     end 
   end 
   get '/*a', to: 'application#not_found'
