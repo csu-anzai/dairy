@@ -1,3 +1,5 @@
+about = Page.create(headline: "About", title: "Aim to provide pure milk & milk products.", page_type: "about", active: :true, description: "We provide milk and it's product services, After seeing the current technologies trends we start this service.")
+help = Page.create(headline: "Help", title: "We are always availabe to assist you.",page_type: "help", active: :true, description: "You can avail our service by dowonloading 'GwalG' app from play store and get register or Call (+91) 9870 444 870 with your details or Whatsapp (+91) 9870 444 870  or Register using website, this all options are available.")
 i_c = ItemCategory.create(name: 'Dairy')
 
 i_a1 = ItemAttribute.create(name: 'Brand')
