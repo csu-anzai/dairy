@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :batches, inverse_of: :supplier, dependent: :destroy
   has_many :active_subscriptions, through: :addresses, source: :active_subscriptions
 
-  has_many :to_be_paid_subscriptions,->{where('subscriptions.start_date <= (?) and subscriptions.end_date >= (?)', Date.current, Date.current)}, 
+  has_many :to_be_paid_subscriptions,->{where('subscriptions.start_date <= (?) and (subscriptions.end_date >= (?) or subscriptions.end_date < (?))', Date.current, Date.current, Date.current)}, 
             through: :addresses, source: :subscriptions
   has_many :addons, through: :to_be_paid_subscriptions
 
@@ -32,21 +32,23 @@ class User < ApplicationRecord
 
   def payment_data
     data = []
-    to_be_paid_subscriptions.includes(:addons, :item_variant, :payments).each do |subs|
-      subs_detials = {}
-      # data << { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount + subs.addons.to_be_paid.collect(&:to_be_paid_amount).inject(&:+) }
+    if to_be_paid_subscriptions.present?
+      to_be_paid_subscriptions.includes(:addons, :item_variant, :payments).each do |subs|
+        subs_detials = {}
+        # data << { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount + subs.addons.to_be_paid.collect(&:to_be_paid_amount).inject(&:+) }
 
-      subs_detials['subscriptions'] = { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount }
-      data << subs_detials
-      
-      subs.addons.to_be_paid.each do |addon|
-        addon_details = {}
-        addon_details['addons'] = { quantity: addon.quantity, price: addon.price, payable_days: addon.payable_days, amount: addon.to_be_paid_amount }
-        data << addon_details
+        subs_detials['subscriptions'] = { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount }
+        data << subs_detials
+        
+        subs.addons.to_be_paid.each do |addon|
+          addon_details = {}
+          addon_details['addons'] = { quantity: addon.quantity, price: addon.price, payable_days: addon.payable_days, amount: addon.to_be_paid_amount }
+          data << addon_details
+        end
+        data << { payments: {paid_amount: subs.payed_amount.to_i, total_payable: ( (subs_to_be_paid_amount + addons_to_be_paid_amount) -subs.payed_amount.to_i) } }
       end
-
-      data << { payments: {paid_amount: subs.payed_amount.to_i, total_payable: ( (subs_to_be_paid_amount + addons_to_be_paid_amount) -subs.payed_amount.to_i) } }
-
+    else
+      data << { message: "No subscription found!", access_code: I18n.t('access_code.failure')}
     end
     data
   end
