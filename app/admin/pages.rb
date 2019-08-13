@@ -6,6 +6,7 @@ ActiveAdmin.register Page do
     f.inputs do
       f.input :headline
       f.input :title
+      f.input :page_type
       f.input :description
       f.input :active, as: :select, :prompt => "✔ Select Status", :collection => STATUS
       f.input :created_by, :input_html => { :value => current_admin_user.id }, as: :hidden

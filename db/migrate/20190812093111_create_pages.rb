@@ -3,7 +3,7 @@ class CreatePages < ActiveRecord::Migration[5.2]
     create_table :pages do |t|
       t.string  :headline
       t.string  :title
-      t.string  :description
+      t.text    :description
       t.string  :page_type
       t.boolean :active, default: true
       t.string  :created_by
