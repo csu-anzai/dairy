@@ -8,6 +8,10 @@ class Api::V1::PagesController < ApplicationController
 		@help = set_page(params[:page][:type]) 
 	end
 
+	def contact
+		@contact = set_page(params[:page][:type])
+	end
+
 	private
 
 	def set_page(params)

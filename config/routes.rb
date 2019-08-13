@@ -34,6 +34,7 @@ Rails.application.routes.draw do
      get '/payments/due_payment', to: 'payments#due_payment'
      post '/pages/about_us', to: 'pages#about'
      post '/pages/help', to: 'pages#help'
+     post '/pages/contact_us', to: 'pages#contact'
     end 
   end 
   get '/*a', to: 'application#not_found'
