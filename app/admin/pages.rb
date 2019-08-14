@@ -14,5 +14,5 @@ ActiveAdmin.register Page do
     end
     f.actions
   end
-
+  
 end
