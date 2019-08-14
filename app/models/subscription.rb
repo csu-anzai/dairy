@@ -20,7 +20,7 @@ class Subscription < ApplicationRecord
   delegate :price, to: :item_variant
 
   # scope
-  scope :active, -> { where('subscription.status = (?) and subscription.start_date <= (?) and subscription.end_date >= (?)', 'active', Date.current, Date.current) }
+  scope :active, -> { where('subscriptions.status = (?) and subscriptions.start_date <= (?) and subscriptions.end_date >= (?)', 'active', Date.current, Date.current) }
 
   # Validations
   validates :quantity, presence: true, format: { with: /\A\d+(?:\.\d{0,3})?\z/ , message: "must be valid!"}, numericality: { greater_than_or_equal_to: 0.25, less_than_or_equal_to: 1000 }
