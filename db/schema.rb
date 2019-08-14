@@ -225,7 +225,7 @@ ActiveRecord::Schema.define(version: 2019_08_12_093111) do
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "headline"
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "page_type"
     t.boolean "active", default: true
     t.string "created_by"
