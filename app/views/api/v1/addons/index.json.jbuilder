@@ -3,9 +3,9 @@ json.add_ons do
 	json.array! @add_ons do |addon|
 	  json.id addon.id
 	  json.title addon.title
-	  json.subscription_id addon.subscription_id
-	  json.unit_id addon.unit_id
+	  json.subscription "#{addon.subscription.title} (#{addon.subscription.start_date.strftime('%d-%b-%Y')} to #{addon.subscription.end_date.strftime('%d-%b-%Y')})"
 	  json.quantity addon.quantity
+	  json.unit "#{addon.unit.name}"+"(#{addon.unit.code})"
 	  json.start_date addon.start_date
 	  json.end_date addon.end_date
 	  json.remarks addon.remarks
