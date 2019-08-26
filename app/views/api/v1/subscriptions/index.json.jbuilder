@@ -2,12 +2,12 @@ json.access_code @subscriptions.present? ? I18n.t('access_code.success') : I18n.
 json.subscriptions do 
 	json.array! @subscriptions do |subs|
 	  json.id subs.id
-	  json.address_id subs.address_id
-	  json.item_variant_id subs.item_variant_id
-	  json.unit_id subs.unit_id
 	  json.title subs.title
-	  json.quantity subs.quantity
-	  json.frequency subs.frequency
+	  json.item_variant subs.item_variant.title
+	  json.quantity subs.quantity 
+	  json.unit "#{subs.unit.name}"+"(#{subs.unit.code})"
+	  json.frequency subs.frequency == 0 ? "Daily" : subs.quantity == 1 ? "Once" : subs.quantity == 2 ? "Alternative Days" : "Weekly" 
+	  json.full_address subs.address.address1 + ", " + subs.address.address2
 	  json.start_date subs.start_date
 	  json.end_date subs.end_date
 	  json.remarks subs.remarks
