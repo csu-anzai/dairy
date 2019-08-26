@@ -8,14 +8,14 @@ json.subscriptions do
 	  json.unit "#{subs.unit.name}"+"(#{subs.unit.code})"
 	  json.frequency subs.frequency == 0 ? "Daily" : subs.quantity == 1 ? "Once" : subs.quantity == 2 ? "Alternative Days" : "Weekly" 
 	  json.full_address subs.address.address1 + ", " + subs.address.address2
-	  json.start_date subs.start_date
-	  json.end_date subs.end_date
+	  json.start_date subs.start_date.strftime('%d-%b-%Y')
+	  json.end_date subs.end_date.strftime('%d-%b-%Y')
 	  json.remarks subs.remarks
 	  json.call_verified subs.call_verified
 	  json.status subs.status
 	  json.created_by subs.created_by
 	  json.updated_by subs.updated_by
-	  json.created_at subs.created_at
-	  json.updated_at subs.updated_at
+	  json.created_at subs.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at subs.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end
