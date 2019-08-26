@@ -15,6 +15,6 @@ json.subscription do
   json.status @subscription.status
   json.created_by @subscription.created_by
   json.updated_by @subscription.updated_by
-  json.created_at @subscription.created_at
-  json.updated_at @subscription.updated_at
+  json.created_at @subscription.created_at.strftime('%d-%b-%Y @ %H:%M')
+  json.updated_at @subscription.updated_at.strftime('%d-%b-%Y @ %H:%M')
 end

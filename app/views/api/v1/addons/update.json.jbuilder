@@ -10,6 +10,6 @@ json.add_on do
 	json.end_date @add_on.end_date
 	json.remarks @add_on.remarks
 	json.status @add_on.status
-	json.created_at @add_on.created_at
-	json.updated_at @add_on.updated_at
+	json.created_at @add_on.created_at.strftime('%d-%b-%Y @ %H:%M')
+	json.updated_at @add_on.updated_at.strftime('%d-%b-%Y @ %H:%M')
 end

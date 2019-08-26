@@ -5,6 +5,6 @@ json.user do
 	json.username @user.username
 	json.exp_time @time
 	json.token @token
-	json.created_at @user.created_at
-	json.updated_at @user.updated_at
+	json.created_at @user.created_at.strftime('%d-%b-%Y @ %H:%M')
+	json.updated_at @user.updated_at.strftime('%d-%b-%Y @ %H:%M')
 end

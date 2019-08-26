@@ -7,7 +7,7 @@ json.units do
 	  json.active u.active
 	  json.created_by u.created_by
 	  json.updated_by u.updated_by
-	  json.created_at u.created_at
-	  json.updated_at u.updated_at
+	  json.created_at u.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at u.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end

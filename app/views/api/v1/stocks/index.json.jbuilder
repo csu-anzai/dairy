@@ -8,7 +8,7 @@ json.stocks do
 	  json.active stk.active
 	  json.created_by stk.created_by
 	  json.updated_by stk.updated_by
-	  json.created_at stk.created_at
-	  json.updated_at stk.updated_at
+	  json.created_at stk.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at stk.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end

@@ -8,13 +8,13 @@ json.subscription do
   json.title @subscription.title
   json.quantity @subscription.quantity
   json.frequency @subscription.frequency
-  json.start_date @subscription.start_date
-  json.end_date @subscription.end_date
+  json.start_date @subscription.start_date.strftime('%d-%b-%Y')
+  json.end_date @subscription.end_date.strftime('%d-%b-%Y')
   json.remarks @subscription.remarks
   json.call_verified @subscription.call_verified
   json.status @subscription.status
   json.created_by @subscription.created_by
   json.updated_by @subscription.updated_by
-  json.created_at @subscription.created_at
-  json.updated_at @subscription.updated_at
+  json.created_at @subscription.created_at.strftime('%d-%b-%Y @ %H:%M')
+  json.updated_at @subscription.updated_at.strftime('%d-%b-%Y @ %H:%M')
 end

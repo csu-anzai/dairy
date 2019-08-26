@@ -3,7 +3,7 @@ json.item_attributes do
 	json.array! @item_attributes do |attribute|
 	  json.id attribute.id
 	  json.name attribute.name
-	  json.created_at attribute.created_at
-	  json.updated_at attribute.updated_at
+	  json.created_at attribute.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at attribute.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end

@@ -12,7 +12,7 @@ json.locations do
 	  json.status loc.status
 	  json.created_by loc.created_by
 	  json.updated_by loc.updated_by
-	  json.created_at loc.created_at
-	  json.updated_at loc.updated_at
+	  json.created_at loc.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at loc.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end
