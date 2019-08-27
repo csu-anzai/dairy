@@ -7,7 +7,7 @@ json.items do
 	  json.active i.active
 	  json.created_by i.created_by
 	  json.updated_by i.updated_by
-	  json.created_at i.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at i.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at i.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at i.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

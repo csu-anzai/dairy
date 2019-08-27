@@ -12,7 +12,7 @@ json.customers do
 	  json.premier cust.premier
 	  json.call_verified cust.call_verified
 	  json.active cust.active
-	  json.created_at cust.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at cust.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at cust.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at cust.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

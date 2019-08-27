@@ -8,7 +8,7 @@ json.item_variants do
 	  json.active i_var.active
 	  json.created_by i_var.created_by
 	  json.updated_by i_var.updated_by
-	  json.created_at i_var.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at i_var.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at i_var.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at i_var.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

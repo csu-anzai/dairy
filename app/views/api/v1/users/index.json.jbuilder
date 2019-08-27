@@ -13,7 +13,7 @@ json.users do
 	  json.blacklisted usr.blacklisted
 	  json.created_by usr.created_by
 	  json.updated_by usr.updated_by
-	  json.created_at usr.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at usr.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at usr.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at usr.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

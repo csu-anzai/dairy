@@ -3,6 +3,6 @@ json.message 'Created successfully'
 json.item_attribute do 
 	json.id @item_attribute.id
 	json.name @item_attribute.name
-	json.created_at @item_attribute.created_at.strftime('%d-%b-%Y @ %H:%M')
-	json.updated_at @item_attribute.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	json.created_at @item_attribute.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	json.updated_at @item_attribute.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 end

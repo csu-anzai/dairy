@@ -13,7 +13,7 @@ ActiveAdmin.register Subscription do
       f.input :unit_id, as: :select, :prompt => "⚖️ Select Unit", collection: Unit.all.collect {|u| [u.name, u.id] }
       f.input :title
       f.input :quantity
-      f.input :frequency, as: :select, :prompt => "♬ Select Frequency", :collection => FREQUENCY
+      f.input :frequency, as: :select, :prompt => "〄 Select Frequency", :collection => FREQUENCY
       f.input :start_date
       f.input :end_date
       f.input :remarks
