@@ -9,7 +9,7 @@ json.payments do
 	  json.remarks pay.remarks
 	  json.created_by pay.created_by
 	  json.updated_by pay.updated_by
-	  json.created_at pay.created_at
-	  json.updated_at pay.updated_at
+	  json.created_at pay.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at pay.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end

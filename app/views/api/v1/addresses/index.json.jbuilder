@@ -19,7 +19,7 @@ json.addresses do
 	  json.status add.status
 	  json.created_by add.created_by
 	  json.updated_by add.updated_by
-	  json.created_at add.created_at
-	  json.updated_at add.updated_at
+	  json.created_at add.created_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.updated_at add.updated_at.strftime('%d-%b-%Y @ %H:%M')
 	end
 end
