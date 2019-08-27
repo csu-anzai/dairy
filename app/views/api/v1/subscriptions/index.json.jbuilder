@@ -15,7 +15,7 @@ json.subscriptions do
 	  json.status subs.status
 	  json.created_by subs.created_by
 	  json.updated_by subs.updated_by
-	  json.created_at subs.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at subs.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at subs.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at subs.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

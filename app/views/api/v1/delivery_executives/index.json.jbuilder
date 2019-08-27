@@ -13,7 +13,7 @@ json.delivery_executives do
 	  json.blacklisted exe.blacklisted
 	  json.created_by exe.created_by
 	  json.updated_by exe.updated_by
-	  json.created_at exe.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at exe.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at exe.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at exe.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

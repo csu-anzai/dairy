@@ -13,7 +13,7 @@ json.vendors do
 	  json.blacklisted ven.blacklisted
 	  json.created_by ven.created_by
 	  json.updated_by ven.updated_by
-	  json.created_at ven.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at ven.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at ven.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at ven.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

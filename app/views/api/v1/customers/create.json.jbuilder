@@ -12,6 +12,6 @@ json.customer do
 	json.premier @customer.premier
 	json.call_verified @customer.call_verified
 	json.active @customer.active
-	json.created_at @customer.created_at.strftime('%d-%b-%Y @ %H:%M')
-	json.updated_at @customer.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	json.created_at @customer.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	json.updated_at @customer.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 end

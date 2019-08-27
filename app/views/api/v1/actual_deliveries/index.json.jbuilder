@@ -9,7 +9,7 @@ json.deliveries do
 	  json.status del.status
 	  json.created_by del.created_by
 	  json.updated_by del.updated_by
-	  json.created_at del.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at del.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at del.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at del.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end

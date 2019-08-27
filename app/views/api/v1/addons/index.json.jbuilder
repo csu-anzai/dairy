@@ -10,7 +10,7 @@ json.add_ons do
 	  json.end_date addon.end_date.strftime('%d-%b-%Y')
 	  json.remarks addon.remarks
 	  json.status addon.status
-	  json.created_at addon.created_at.strftime('%d-%b-%Y @ %H:%M')
-	  json.updated_at addon.updated_at.strftime('%d-%b-%Y @ %H:%M')
+	  json.created_at addon.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+	  json.updated_at addon.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 	end
 end
