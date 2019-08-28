@@ -1,4 +1,23 @@
 json.access_code @address.present? ? I18n.t('access_code.success') : I18n.t('access_code.failure')
 json.address do
-	json.(@address, :id, :address1, :latitude, :longitude, :receiver_name, :receiver_mobile, :land_mark, :zip, :remarks, :status, :created_by, :updated_by, :created_at, :updated_at)
+	json.id @address.id
+  json.address1 @address.address1
+  json.address2 @address.address2
+  json.addressable do
+  	json.user_name @address.addressable.name
+  	json.mobile @address.addressable.mobile
+  	json.date_of_birth @address.addressable.date_of_birth
+  end
+  json.latitude @address.latitude
+  json.longitude @address.longitude
+  json.receiver_name @address.receiver_name
+  json.receiver_mobile @address.receiver_mobile
+  json.land_mark @address.land_mark
+  json.zip @address.zip
+  json.remarks @address.remarks
+  json.status @address.status
+  json.created_by @address.created_by
+  json.updated_by @address.updated_by
+  json.created_at @address.created_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
+  json.updated_at @address.updated_at.strftime('%d-%b-%Y ⌚ %I:%M %p')
 end
