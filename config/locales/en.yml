@@ -85,4 +85,9 @@ en:
       second_address: "Delhi, India (110022)"
       mobile: "(+91) 9870 444 870"
       email: "info@gwalg.com"
+    team:
+      t_name1: "S K Yadav"
+      t_name2: "N Agarwal"
+      t_name3: "Rochy Rai"
+      t_name4: "R N Pandey"
 
