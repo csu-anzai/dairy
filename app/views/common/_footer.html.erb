@@ -15,18 +15,18 @@
 			<ul>
 				<li>
 					<p>
-						<i class="fa fa-map-marker mr-2"></i>Tamkuhi Road, Seorahi, Kushinagar, UP, India.
+						<i class="fa fa-map-marker mr-2"></i> <%= I18n.t('website.contact.first_address') + I18n.t('website.contact.second_address') %>
 					</p>
 				</li>
 				<li class="mx-4">
 					<p>
-						<i class="fa fa-phone mr-2"></i>(+91) 9870 444 870.
+						<i class="fa fa-phone mr-2"></i> <%= I18n.t('website.contact.mobile') %>
 					</p>
 				</li>
 				<li>
 					<p class="text-wh">
 						<i class="fa fa-envelope-open mr-2"></i>
-						<a href="mailto:info@gwalg.com">info@gwalg.com</a>
+						<a href="mailto:<%= I18n.t('website.contact.email') %>"> <%= I18n.t('website.contact.email') %> </a>
 					</p>
 				</li>
 			</ul>
@@ -60,7 +60,7 @@
 		<!-- //social icons -->
 		<!-- copyright -->
 		<div class="w3l-copy text-center mt-5">
-			<p class="text-da">© <%= Time.now.strftime("%Y") %> GwalG. All rights reserved | Design by
+			<p class="text-da">© <%= Time.now.strftime("%Y") %> <%= I18n.t('website.name') %>. All rights reserved | Design by
 				<a target="blank" href="http://w3layouts.com/">W3layouts</a>
 			</p>
 		</div>

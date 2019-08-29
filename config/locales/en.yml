@@ -78,3 +78,11 @@ en:
         otp_sensitive: "OTP is case sensitive."
         otp_invalid: "Invalid OTP."
         invalid: "Invalid username."
+  website:
+    name: "GwalG"
+    contact:
+      first_address: "R K PURAM, New Delhi, "
+      second_address: "Delhi, India (110022)"
+      mobile: "(+91) 9870 444 870"
+      email: "info@gwalg.com"
+
