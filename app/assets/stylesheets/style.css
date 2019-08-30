@@ -636,7 +636,7 @@ a.reqe-button {
 }
 
 .banner-top {
-    background: url(banners/b2.jpg) no-repeat bottom;
+    background: url(b2.jpg) no-repeat bottom;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -645,7 +645,7 @@ a.reqe-button {
 }
 
 .banner-top1 {
-    background: url(banners/b3.jpg) no-repeat bottom;
+    background: url(./banners/b3.jpg) no-repeat bottom;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -654,7 +654,7 @@ a.reqe-button {
 }
 
 .banner-top2 {
-    background: url(banners/b1.jpg) no-repeat top;
+    background: url(./banners/b1.jpg) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -663,7 +663,7 @@ a.reqe-button {
 }
 
 .banner-top3 {
-    background: url(banners/b5.jpg) no-repeat 0px 0px;
+    background: url(./banners/b5.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
