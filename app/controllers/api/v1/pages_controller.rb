@@ -1,15 +1,15 @@
 class Api::V1::PagesController < ApplicationController
 
 	def about
-		@about = set_page(params[:page][:type])
+		@about = set_page(params[:type])
 	end
 
 	def help
-		@help = set_page(params[:page][:type]) 
+		@help = set_page(params[:type]) 
 	end
 
 	def contact
-		@contact = set_page(params[:page][:type])
+		@contact = set_page(params[:type])
 	end
 
 	private
