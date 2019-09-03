@@ -31,24 +31,24 @@ class User < ApplicationRecord
 
 
   def payment_data
-    data = []
+    data = {}
     if to_be_paid_subscriptions.present?
       to_be_paid_subscriptions.includes(:addons, :item_variant, :payments).each do |subs|
         subs_detials = {}
         # data << { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount + subs.addons.to_be_paid.collect(&:to_be_paid_amount).inject(&:+) }
 
         subs_detials['subscriptions'] = { quantity: subs.quantity, price: subs.price, payable_days: subs.payable_days, amount: subs.to_be_paid_amount }
-        data << subs_detials
+        data.merge!(subs_detials)
         
         subs.addons.to_be_paid.each do |addon|
           addon_details = {}
           addon_details['addons'] = { quantity: addon.quantity, price: addon.price, payable_days: addon.payable_days, amount: addon.to_be_paid_amount }
-          data << addon_details
+          data.merge!(addon_details)
         end
-        data << { payments: {paid_amount: subs.payed_amount.to_i, total_payable: ( (subs_to_be_paid_amount + addons_to_be_paid_amount) -subs.payed_amount.to_i) } }
+        data.merge!({ payments: {paid_amount: subs.payed_amount.to_i, total_payable: ( (subs_to_be_paid_amount + addons_to_be_paid_amount) -subs.payed_amount.to_i) } } )
       end
     else
-      data << { message: "No subscription found!", access_code: I18n.t('access_code.failure')}
+      data.merge!( { message: "No subscription found!", access_code: I18n.t('access_code.failure')} )
     end
     data
   end
