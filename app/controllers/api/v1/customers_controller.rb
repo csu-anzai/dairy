@@ -1,6 +1,6 @@
 class Api::V1::CustomersController < ApplicationController
 
-	before_action :authorize_request
+	before_action :authorize_request, except: [:create]
 	before_action :set_customer, only: [:show, :edit, :update, :destroy]
 	
 	def create
@@ -34,7 +34,7 @@ class Api::V1::CustomersController < ApplicationController
 	end
 
 	def customer_params
-		params.require(:customer).permit(:id, :salutation, :name, :gender, :username, :email, :mobile, :date_of_birth, :type, :premium, :call_verified, :blacklisted, :active, :created_by, :updated_by )
+		params.require(:customer).permit(:id, :salutation, :name, :gender, :username, :email, :password, :password_confirmation, :mobile, :date_of_birth, :type, :premium, :call_verified, :blacklisted, :active, :created_by, :updated_by )
 	end
 
 end
